@@ -1,0 +1,10 @@
+node_modules
+phind-answers
+guide/.vuepress/.cache
+guide/.vuepress/.temp
+guide/.vuepress/dist
+.vscode/settings.json
+.vscode/guide.code-snippets
+.github/ISSUE_TEMPLATE
+.github/PULL_REQUEST_TEMPLATE.md
+.DS_Store
