@@ -13,7 +13,7 @@ export default {
 				'/1/datatypes',
 				'/1/input-output',
 				'/1/control-structures',
-				'/1/arrays'
+				'/1/arrays',
 			],
 		},
 		{
@@ -22,5 +22,5 @@ export default {
 				'/2/oop.md',
 			],
 		},
-	]
+	],
 };
