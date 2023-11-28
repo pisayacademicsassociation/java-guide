@@ -17,6 +17,8 @@ class Catalyst extends Weapon {
 }
 ```
 
+The `extends` keyword allows us to declare that the `Catalyst` class inherits all the fields and methods from the `Weapon` class, hence making `Weapon` a superclass and making `Catalyst` a subclass.
+
 This gives `Catalyst` all the same fields and methods as `Weapon`, yet allows its code to focus exclusively on the features that make it unique. This makes code for your subclasses easy to read. However, since that code will not be present in the source file of every subclass, you have to be careful to thoroughly explain the additional states and behaviors that each superclass defines.
 
 ### Changing defined properties for a subclass
@@ -406,13 +408,18 @@ Now, you may be wondering, "Which should I use? Abstract classes or interfaces?"
 	- You want to specify the behavior of a particular data type, but not concerned about who implements its behavior.
 	- You want to take advantage of multiple type inheritance.
 
-## Access modifiers
+## What is Encapsulation?
+
+In Object-Oriented Programming, encapsulation refers to the hiding of method implementations and fields outside the class. This restricts programmers from touching any variables inside your class, and requires them to use the `get` and `set` methods to access what they need.
+
+### Access modifiers
 
 We've been using the keywords `static`, `public`, `protected`, and `private` for quite a while now, but you probably don't quite get just what are these keywords, and what do they do. These are usually called as "access modifiers", since they can modify access to a certain class, field, method, etc.
 
 A `public` keyword means that this is accessible anywhere. For example,
 ```java
 public class LivingEntity {
+	public 
 	// ...
 }
 ```
@@ -442,7 +449,7 @@ public class LivingEntity {
 
 public class PlayerEntity extends LivingEntity {
 	public void say(String message) {
-		// This extends LivingEntity, therefore it has access to the say method.
+		// This extends LivingEntity, therefore it has access to the say method inside LivingEntity.
 
 		super.say(message);
 	}
@@ -492,6 +499,10 @@ Functions.makeId();
 Do note that you can't use `protected`, `private` or `static` on top-level classes (classes that aren't nested in another class). This is because top-level classes are `public` by default.
 :::
 
-## What is Encapsulation?
+### Accessors and Mutators
 
-- the data and implementation details of methods are hidden	(maam nasaan ppt ninyo)
+Also known as setters and getters, these are methods that allow interaction for private class fields.
+
+An accessor or getter is a method that returns the value of the private field inside the class. Usually, this is prefixed with `get` and the field name, for example, `getDamage()`.
+
+A mutator or setter is a method that modifies the value of the private field inside the class. Usually, this is prefixed with `set` and the field name, for example, `setDamage()`.
