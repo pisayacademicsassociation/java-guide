@@ -8,3 +8,5 @@ guide/.vuepress/dist
 .github/ISSUE_TEMPLATE
 .github/PULL_REQUEST_TEMPLATE.md
 .DS_Store
+TODO.md
+.gitignore

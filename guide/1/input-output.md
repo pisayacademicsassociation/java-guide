@@ -77,11 +77,12 @@ Do note that this example was done with the methods used seperately. Using `next
 
 You've heard of `printf()` from the start of the `Output` section, but just what does it do? Basically, you can put format specifiers in your strings, and `printf()` will format the string accordingly, depending on the variables you pass to `printf()`.
 
-For now, you will only need these four conversion characters:
+For now, you will only need these five conversion characters:
 - `%d` - decimal integer (byte, short, int and long)
 - `%f` - floating-point number (float, double)
 - `%c` or `%C` - character (using `%C` will captialize the character)
 - `%s` or `%S` - string (using `%S` will capitalize all letters in the string)
+- `%b` - boolean
 
 There are also optional flags you can use to further format your messages. You have to put these flags before the conversion character, like this: `%,d`.
 
