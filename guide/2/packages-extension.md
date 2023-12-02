@@ -1,7 +1,7 @@
 # Packages (extended)
 
 ::: tip
-This page is a follow-up and assumes you know the concepts from the [**Classes, Objects and Packages**](../2/classes-objects-packages.md) section.
+This page is a follow-up and assumes you know the concepts from the [**Classes, Objects and Packages**](../2/classes-objects-packages) section.
 :::
 
 ## Understanding packages

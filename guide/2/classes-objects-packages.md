@@ -94,7 +94,7 @@ ClassName myClass = new ClassName(args);
 where `ClassName` is the name of the class, `myClass` is the variable name, and `args` are arguments/parameters to be passed to the `ClassName` constructor.
 
 ::: tip
-Constructors are explained more in-depth in this a later section, over [here](../2/classes-extension.md.html#defining-class-constructors).
+Constructors are explained more in-depth in this a later section, over [here](../2/classes-extension.html#defining-class-constructors).
 :::
 
 Let us try to create a new character using our `CharacterCard` class. 

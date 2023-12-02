@@ -1,11 +1,11 @@
 # Classes (extended)
 
 ::: tip
-This page is a follow-up and assumes you know the concepts from the [**Classes, Objects and Packages**](../2/classes-objects-packages.md.html) section.
+This page is a follow-up and assumes you know the concepts from the [**Classes, Objects and Packages**](../2/classes-objects-packages.html) section.
 :::
 
 ## Defining class methods
-Our classes can have various methods that a programmer may use to interact with it. Here is an example of your typical method declaration, taken from the [previous](../2/classes-objects-packages.md.html) section.
+Our classes can have various methods that a programmer may use to interact with it. Here is an example of your typical method declaration, taken from the [previous](../2/classes-objects-packages.html) section.
 ```java
 public void takeDamage(int damage) {
 	this.health -= damage;
@@ -37,7 +37,7 @@ From our example above, we can slice this function into it's corresponding parts
 ## Defining and using class constructors 
 In our classes, we know that they can have various fields and methods. A class can also have a constructor. In the Java Programming Language, a constructor is also considered a method. However, it is a more *special* type of method, only being called when a new class that contains that constructor is made.
 
-Let's go back to our `CharacterCard` class from the [**Classes, Objects and Packages**](../2/classes-objects-packages.md.md) section.
+Let's go back to our `CharacterCard` class from the [**Classes, Objects and Packages**](../2/classes-objects-packages) section.
 ```java
 public class CharacterCard {
 	String name;
