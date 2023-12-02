@@ -1,5 +1,4 @@
-# Classes (Continued)
-
+# Classes (extended)
 
 ## Class methods and constructors
 In our classes, we know that 

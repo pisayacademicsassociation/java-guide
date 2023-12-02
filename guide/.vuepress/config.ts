@@ -27,7 +27,7 @@ const config = defineUserConfig<DefaultThemeOptions, ViteBundlerOptions>({
 		docsDir: 'guide',
 		sidebarDepth: 3,
 		editLinks: true,
-		lastUpdated: false,
+		lastUpdated: true,
 		navbar: [],
 		themePlugins: {
 			mediumZoom: false,

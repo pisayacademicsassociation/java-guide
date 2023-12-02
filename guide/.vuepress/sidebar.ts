@@ -4,6 +4,7 @@ export default {
 			text: 'Home',
 			children: [
 				'/',
+				'/whats-new',
 			],
 		},
 		{
@@ -20,7 +21,9 @@ export default {
 			text: 'Quarter 2',
 			children: [
 				'/2/classes-objects-packages',
-				'/2/oop.md',
+				'/2/oop',
+				'/2/classes-extension',
+				'/2/packages-extension'
 			],
 		},
 	],
