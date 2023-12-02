@@ -13,7 +13,7 @@ The code below creates an array named `intArray` with the following line of code
 int[] intArray;
 ```
 
-Simlilar to declarations for variables of other types, an array declaration has two components: the array's type and the array's name. An array's type is written as `type[]`, where `type` is the data type of the contained elements, while the brackets are special symbols indicating that this variable holds an array. The size of the array is not part of its type, which is why the brackets are empty. An array's name can be anything you want, provided that it follows the rules and conventions as discussed in the [Variables](/1/variables.md/#variable-naming-conventions) section.
+Simlilar to declarations for variables of other types, an array declaration has two components: the array's type and the array's name. An array's type is written as `type[]`, where `type` is the data type of the contained elements, while the brackets are special symbols indicating that this variable holds an array. The size of the array is not part of its type, which is why the brackets are empty. An array's name can be anything you want, provided that it follows the rules and conventions as discussed in the [Variables](/1/variables/#variable-naming-conventions) section.
 
 Similarly, you can declare arrays of other types:
 ```java

@@ -1,13 +1,13 @@
 # Packages (extended)
 
 ::: tip
-This page is a follow-up and assumes you know the concepts from the [**Classes, Objects and Packages**](/guide/2/classes-objects-packages.md) section.
+This page is a follow-up and assumes you know the concepts from the [**Classes, Objects and Packages**](/guide/2/classes-objects-packages) section.
 :::
 
 ## Understanding packages
 A package is a namespace containing a bundled group of related types (classes, interfaces, etc.) that is used to make types easier to use and find, avoid naming conflicts and to control access to certain types.
 
-We have already seen an example of this with the `Scanner` class from our [**Input and Output**](/guide/1/input-output.md) section. We are using the `Scanner` class, bundled in the `java.util` package.
+We have already seen an example of this with the `Scanner` class from our [**Input and Output**](/guide/1/input-output) section. We are using the `Scanner` class, bundled in the `java.util` package.
 
 The types that are part of the Java platform are members of various packages that bundle their classes by their functions: fundamental classes are in `java.lang`, classes for reading and writing (input and output) are in `java.io`, and so on. You can put your types in packages too.
 
@@ -49,7 +49,7 @@ You should bundle these classes and the interface in a package for several reaso
 - You and other programmers can easily determine that these types are related.
 - You and other programmers know where to find types that can provide graphics-related functions.
 - The names of your types will not conflict with the type names in other packages because the package creates a new namespace.
-- You can allow types within the package to have unrestricted access to one another yet still restrict access for types outside the package (explained here in [**Access Modifiers**](/guide/2/oop.md#access-modifiers)).
+- You can allow types within the package to have unrestricted access to one another yet still restrict access for types outside the package (explained here in [**Access Modifiers**](/guide/2/oop#access-modifiers)).
 
 ## Creating a package
 To create a package, you choose a name for the package (naming conventions are discussed in the [next](#naming-a-package) section) and put a package statement with that name at the top of every source file that contains the types that you want to include in the package.
