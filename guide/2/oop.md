@@ -386,8 +386,7 @@ We've been using the keywords `static`, `public`, `protected`, and `private` for
 
 A `public` keyword means that this is accessible anywhere. For example,
 ```java
-public class LivingEntity {
-	public 
+public class LivingEntity { 
 	// ...
 }
 ```
