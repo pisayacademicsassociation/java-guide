@@ -4,8 +4,8 @@ export default {
 			text: 'Home',
 			children: [
 				'/',
-				'/whats-new',
-			],
+				'/whats-new'
+			]
 		},
 		{
 			text: 'Quarter 1',
@@ -14,8 +14,8 @@ export default {
 				'/1/datatypes',
 				'/1/input-output',
 				'/1/control-structures',
-				'/1/arrays',
-			],
+				'/1/arrays'
+			]
 		},
 		{
 			text: 'Quarter 2',
@@ -23,8 +23,8 @@ export default {
 				'/2/classes-objects-packages',
 				'/2/classes-extension',
 				'/2/packages-extension',
-				'/2/oop',
-			],
-		},
-	],
+				'/2/oop'
+			]
+		}
+	]
 };

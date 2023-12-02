@@ -1,11 +1,11 @@
 # Classes (extended)
 
 ::: tip
-This page is a follow-up and assumes you know the concepts from the [**Classes, Objects and Packages**](/guide/2/classes-objects-packages) section.
+This page is a follow-up and assumes you know the concepts from the [**Classes, Objects and Packages**](../2/classes-objects-packages.md.html) section.
 :::
 
 ## Defining class methods
-Our classes can have various methods that a programmer may use to interact with it. Here is an example of your typical method declaration, taken from the [previous](/guide/2/classes-objects-packages) section.
+Our classes can have various methods that a programmer may use to interact with it. Here is an example of your typical method declaration, taken from the [previous](../2/classes-objects-packages.md.html) section.
 ```java
 public void takeDamage(int damage) {
 	this.health -= damage;
@@ -20,7 +20,7 @@ public void takeDamage(int damage) {
 A method declaration requires a return type, name, a pair of parentheses `()` and braces `{}`.
 
 More generally, method declarations have six components, in order:
-- Access modifiers — such as `public` and `private`, which is discussed in a later section, over [here](/guide/2/oop#access-modifiers).
+- Access modifiers — such as `public` and `private`, which is discussed in a later section, over [here](../2/oop.html#access-modifiers).
 - The return type — the data type of the value this method will return, or `void` if none.
 - The method name — the method name, following variable naming rules. 
 - The parameter list in paranthesis — a comma seperated list of method parameters, preceded by their data types, all enclosed by parentheses `()`. If there are no parameters, empty parentheses must be used instead.
@@ -28,7 +28,7 @@ More generally, method declarations have six components, in order:
 - The method body, enclosed between braces — the method's code, including the declaration of local variables, goes inside the braces.
 
 From our example above, we can slice this function into it's corresponding parts:
-- `public` — this is the method's access modifier. Access modifiers are discussed in a later section, over [here](/guide/2/oop#access-modifiers).
+- `public` — this is the method's access modifier. Access modifiers are discussed in a later section, over [here](../2/oop.html#access-modifiers).
 - `void` — this is the method's return type. `void` means that this method will not return anything.
 - `takeDamage` — this is the method's name. `takeDamage` perfectly follows variable naming rules.
 - `(int damage)` — this is the method's parameter list. Since there is only one parameter, a comma is unnecessary, and will lead to an error.
@@ -37,7 +37,7 @@ From our example above, we can slice this function into it's corresponding parts
 ## Defining and using class constructors 
 In our classes, we know that they can have various fields and methods. A class can also have a constructor. In the Java Programming Language, a constructor is also considered a method. However, it is a more *special* type of method, only being called when a new class that contains that constructor is made.
 
-Let's go back to our `CharacterCard` class from the [**Classes, Objects and Packages**](/guide/2/classes-objects-packages) section.
+Let's go back to our `CharacterCard` class from the [**Classes, Objects and Packages**](../2/classes-objects-packages.md.md) section.
 ```java
 public class CharacterCard {
 	String name;
