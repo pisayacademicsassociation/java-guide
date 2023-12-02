@@ -19,6 +19,7 @@ export default {
 		{
 			text: 'Quarter 2',
 			children: [
+				'/2/classes-objects-packages',
 				'/2/oop.md',
 			],
 		},
