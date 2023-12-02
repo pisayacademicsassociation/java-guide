@@ -85,4 +85,18 @@ The primary reason behind using early returns is to improve code readability and
 Here, the design of the `CharacterCard` class is based on the previous discussion of characters. The fields name, health, energy, etc., represent the object's state, and the methods (takeDamage(), dealDamage(), heal(), etc.) define its interaction within the game.
 
 ## What is a package?
-A package is basically a namespace that organizes a set of related classes and interfaces. Conceptually you can think of packages as being similar to different folders on your computer. If you remember HTML, CSS and JS (CS 3), then you might have the convention to keep HTML pages in one folder, images in another, and scripts or applications in yet another. Because software written in the Java programming language can be composed of hundreds or thousands of individual classes, it makes sense to keep things organized by placing related classes and interfaces into packages.
+A package is basically a namespace that organizes a set of related classes and interfaces. Conceptually, you can think of packages as being similar to different folders on your computer. If you remember HTML, CSS and JS (CS 3), then you might have the convention to keep HTML pages in one folder, images in another, and scripts or applications in yet another. Because software written in the Java programming language can be composed of hundreds or thousands of individual classes, it makes sense to keep things organized by placing related classes and interfaces into packages.
+
+A package is declared using the `package` keyword, followed by the package name at the very top of the Java file.
+
+```java
+package tcg;
+
+class CharacterCard {
+	// ...
+}
+```
+
+Additionally, packages are **case-sensitive**, which means that the package `tcg` is not equal to `TCG` or `tCg`.
+
+Do also note that the package name needs to match the folder name. For example, lets say we have a class called `TCGClient`, stored in the `/tcg/` folder. The proper package name would be `tcg`.
