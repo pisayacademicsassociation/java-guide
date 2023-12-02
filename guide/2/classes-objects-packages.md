@@ -20,24 +20,27 @@ In your applications, you will often find many individual objects all of the sam
 
 From our character example above, we can create a possible implementation of a character using the `CharacterCard` class:
 ```java
-class CharacterCard {
+public class CharacterCard {
 	String name;
 	String id;
-	double damage;
+	int damage;
 	int health;
 	int energy;
 	int maxHealth;
 	int maxEnergy;
 	boolean dead = false;
 
-	CharacterCard(String name, double damage, int maxHealth, int maxEnergy) {
+	public CharacterCard(String name, int damage, int maxHealth, int maxEnergy) {
 		this.name = name;
 		this.damage = damage;
 		this.maxHealth = maxHealth;
 		this.maxEnergy = maxEnergy;
+
+		this.health = maxHealth;
+		this.energy = 0;
 	}
 
-	void takeDamage(int damage) {
+	public void takeDamage(int damage) {
 		this.health -= damage;
 
 		if (this.health < 0) return;
@@ -47,12 +50,12 @@ class CharacterCard {
 		this.dead = true;
 	}
 
-	void dealDamage(CharacterCard character) {
+	public void dealDamage(CharacterCard character) {
 		character.takeDamage(this.damage);
 		this.energy += 1;
 	}
 
-	void heal(int healing) {
+	public void heal(int healing) {
 		this.health += healing;
 
 		if (this.health < this.maxHealth) return;
@@ -83,6 +86,22 @@ The primary reason behind using early returns is to improve code readability and
 :::
 
 Here, the design of the `CharacterCard` class is based on the previous discussion of characters. The fields name, health, energy, etc., represent the object's state, and the methods (takeDamage(), dealDamage(), heal(), etc.) define its interaction within the game.
+
+The syntax for creating an object from a class can be found below.
+```java
+ClassName myClass = new ClassName(args);
+```
+where `ClassName` is the name of the class, `myClass` is the variable name, and `args` are arguments/parameters to be passed to the `ClassName` constructor.
+
+::: tip
+Constructors are explained more in-depth in this a later section, over [here](/guide/2/classes-extension.md#defining-class-constructors).
+:::
+
+Let us try to create a new character using our `CharacterCard` class. 
+```java
+CharacterCard myCharacter = new CharacterCard("myCharacter", 2.0, 10, 3);
+```
+The code above creates a new `CharacterCard` named `"myCharacter"`, who can deal `2.0` damage, has a maximum of `10` HP, and a maximum of `3` Energy.
 
 ## What is a package?
 A package is basically a namespace that organizes a set of related classes and interfaces. Conceptually, you can think of packages as being similar to different folders on your computer. If you remember HTML, CSS and JS (CS 3), then you might have the convention to keep HTML pages in one folder, images in another, and scripts or applications in yet another. Because software written in the Java programming language can be composed of hundreds or thousands of individual classes, it makes sense to keep things organized by placing related classes and interfaces into packages.

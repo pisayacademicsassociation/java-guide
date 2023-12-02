@@ -1,5 +1,9 @@
 # Packages (extended)
 
+::: tip
+This page is a follow-up and assumes you know the concepts from the [**Classes, Objects and Packages**](/guide/2/classes-objects-packages.md) section.
+:::
+
 ## Understanding packages
 A package is a namespace containing a bundled group of related types (classes, interfaces, etc.) that is used to make types easier to use and find, avoid naming conflicts and to control access to certain types.
 
