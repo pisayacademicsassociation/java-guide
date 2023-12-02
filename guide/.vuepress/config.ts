@@ -1,3 +1,4 @@
+/* eslint-disable no-duplicate-imports */
 import path from 'path';
 import { defineUserConfig } from 'vuepress-vite';
 import type { DefaultThemeOptions, ViteBundlerOptions } from 'vuepress-vite';
@@ -18,7 +19,7 @@ const config = defineUserConfig<DefaultThemeOptions, ViteBundlerOptions>({
 		['meta', { name: 'theme-color', content: '#3eaf7c' }],
 		['meta', { property: 'og:type', content: 'website' }],
 		['meta', { property: 'og:locale', content: 'en_US' }],
-		['meta', { property: 'og:image', content: '/meta-image.png' }],
+		['meta', { property: 'og:image', content: '/meta-image.png' }]
 	],
 	theme: path.join(__dirname, 'theme', 'index.ts'),
 	themeConfig: {
@@ -30,10 +31,10 @@ const config = defineUserConfig<DefaultThemeOptions, ViteBundlerOptions>({
 		lastUpdated: true,
 		navbar: [],
 		themePlugins: {
-			mediumZoom: false,
-		},
+			mediumZoom: false
+		}
 	},
-	plugins: [],
+	plugins: []
 });
 
 const { ALGOLIA_DOCSEARCH_API_KEY, ALGOLIA_DOCSEARCH_APP_ID, GOOGLE_ANALYTICS_ID, NODE_ENV } = process.env;
@@ -46,13 +47,13 @@ if (NODE_ENV === 'production' && ALGOLIA_DOCSEARCH_API_KEY && GOOGLE_ANALYTICS_I
 				appId: ALGOLIA_DOCSEARCH_APP_ID,
 				apiKey: ALGOLIA_DOCSEARCH_API_KEY,
 				indexName: 'discordjs',
-				placeholder: 'Search guide',
-			},
+				placeholder: 'Search guide'
+			}
 		],
 		[
 			'@vuepress/plugin-google-analytics',
-			{ id: GOOGLE_ANALYTICS_ID },
-		],
+			{ id: GOOGLE_ANALYTICS_ID }
+		]
 	);
 }
 

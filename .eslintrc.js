@@ -5,6 +5,7 @@ module.exports = {
 	rules: {
 		indent: ['error', 'tab'],
 		semi: ['error', 'always'],
-		'no-trailing-spaces': 'error'
-	},
+		'no-trailing-spaces': 'error',
+		'comma-dangle': ['warn', 'never']
+	}
 };
