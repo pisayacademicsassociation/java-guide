@@ -112,6 +112,6 @@ For our case, however, we can use the folder name as our package name. For examp
 
 For folders inside graphics, we can seperate the folder names using the `.` symbol. For example, `graphics.shapes` for a package named `shapes` inside the `graphics` folder. A good way of thinking about inner folders is the path. For example, we have an `AttributeContainer` inside the `minecraft/entity/attribute` folder. Our package name would be `minecraft.entity.attribute`.
 
-::: error
+::: danger
 Some IDEs may return an error whenever the package name you are using does not match the folder the file it is in. For example, an IDE may throw an error if a package declaration, `package graphics;` does not match the folder name the file is in, ex. `Graphics`.  
 :::
