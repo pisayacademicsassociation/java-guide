@@ -1,5 +1,9 @@
 # Object-Oriented Programming
 
+::: warning
+It is heavily recommended to read both the [**Classes, Objects and Packages**](./classes-objects-packages.md) section and the [**Classes (Extended)**](./classes-extension.md) section since this section will extend your knowledge on both of those topics. 
+:::
+
 ## What is Inheritance?
 
 Different kinds of objects frequently share some characteristics with one another. Swords, Bows, and Catalysts, for example, all share the characteristics of weapons (damage, range, attackSpeed). Yet each also defines additional querks that make them different: bows require a projectile; catalysts do a certain type of damage; swords can have a certain sharpness to them.
@@ -247,7 +251,7 @@ Here, you can see that `Catalyst` overrides the `printDamage()` method from `Wea
 
 #### Subclass Constructors
 
-As you might've seen earlier, our `Bow` and `Catalyst` classes were using the `super` keyword inside their constructors. The invocation of a superclass constructor must be the first line in the subclass constructor, and the syntax for calling a superclass constructor is
+As you might've seen earlier, our `Bow` and `Catalyst` classes were using the `super` keyword inside their constructors. When a subclass extends on a superclass, the invocation of the superclass constructor must be the first line in the subclass constructor. The  syntax for calling a superclass constructor is
 
 ```java
 super()
@@ -256,11 +260,56 @@ or
 ```java
 super(parameter list)
 ```
-With `super()`, the superclass no-argument constructor is called. With `super(parameter list)`, the superclass constructor with a matching parameter list is called.
+With `super()`, the superclass no-argument constructor is called. With `super(parameter list)`, the superclass constructor with a matching parameter list is called, assuming that the subclass has a constructor with the same parameter list.
 
 ::: warning
 If a constructor does not explicitly invoke a superclass constructor, the Java compiler automatically inserts a call to the no-argument constructor of the superclass. If the super class does not have a no-argument constructor, you will get a compile-time error.
 :::
+
+Let us refer to our `Catalyst` and `Weapon` class as an example.
+```java
+public class Weapon {
+	public int damage;
+	public int range;
+	public int attackSpeed;
+
+	Weapon(int damage, float range, float attackSpeed) {
+		this.damage = damage;
+		this.range = range;
+		this.attackSpeed = attackSpeed;
+	}
+	// Weapon methods
+}
+```
+Here, we can see the constructor of the `Weapon` class, which is `Weapon(int damage, float range, float attackSpeed)`. Since our `Catalyst` class extends the `Weapon` class, we have to invoke the `Weapon` constructor inside the `Catalyst` constructor, like so.
+```java
+class Catalyst extends Weapon {
+	private String damageType;
+
+	Catalyst(int damage, float range, float attackSpeed, String damageType) {
+		// This invokes the Weapon class constructor.
+		super(int damage, float range, float attackSpeed);
+		this.damageType = damageType;
+	}
+
+	// Catalyst methods
+}
+```
+Whenever a subclass extends a superclass, you must invoke the constructor of the superclass through the `super` keyword.
+
+If we didn't do this, we'd get an error, but let's imagine that there is no error, and we wrote the `Catalyst` class like so,
+```java
+class Catalyst extends Weapon {
+	private String damageType;
+
+	Catalyst(int damage, float range, float attackSpeed, String damageType) {
+		this.damageType = damageType;
+	}
+
+	// Catalyst methods
+}
+```
+We'd end up with an incomplete `Catalyst`. Since we only set the `damageType`, we can't really properly use this catalyst since it's incomplete, since the `Weapon` constructor is in charge of setting the `damage`, `range` and `attackSpeed`. This is why the superclass constructor is always invoked: because the subclass just *extends* on the superclass, not create an entirely new class, and the superclass constructor may need some parameters for it's variables, so you need to input said variables to properly create a new superclass, then properly create a new subclass.
 
 #### Final Classes and Methods
 
