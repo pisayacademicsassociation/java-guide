@@ -9,3 +9,4 @@
 
 ### Updated
 - [Object-Oriented Programming](./2/oop): Moved some sections to [Classes (extended)](./2/classes-extension).
+- [Object-Oriented Programming](./2/oop): Added more stuff to [Subclass Constructors](./2/oop#subclass-constructors).
