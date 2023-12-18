@@ -1,7 +1,7 @@
 # Classes (extended)
 
 ::: tip
-This page is a follow-up and assumes you know the concepts from the [**Classes, Objects and Packages**](../2/classes-objects-packages.html) section.
+This page is a follow-up and assumes you know the concepts from the [**Classes, Objects, and Packages**](../2/classes-objects-packages.html) section.
 :::
 
 ## Defining class methods
@@ -86,95 +86,3 @@ public class CharacterCard {
 Our constructor here is `CharacterCard`. A class constructor must always have the same name as the class. This is what differentiates a constructor from a method.
 
 When we want to create a new `CharacterCard`, we use the `new CharacterCard()` syntax. A constructor's arguments are applied to the syntax. Here, we are using the no-argument constructor, which doesn't really exist in `new CharacterCard()`. When creating a new class, we need to pass in valid arguments to the constructor. Here, we need to pass a `String`, `int`, `int`, `int`, in that order. This is because our constructor has a method signature of `(String, int, int, int)`. Therefore, we need to pass our values in that order.
-
-## Method Overloading
-The Java programming language supports overloading methods, and Java can distinguish between methods with different method signatures. This means that methods within a class can have the same name if they have different parameter lists. Additionally, since constructors are considered methods, they also support overloading.
-
-Suppose that you have a class that can use calligraphy to draw various types of data (strings, integers, and so on) and that contains a method for drawing each data type. It is cumbersome to use a new name for each method—for example, `drawString()`, `drawInteger()`, `drawFloat()`, and so on. In the Java programming language, you can use the same name for all the drawing methods but pass a different argument list to each method. Thus, the data drawing class might declare four methods named `draw()`, each of which has a different parameter list.
-
-```java
-public class DataArtist {
-    // ...
-
-    public void draw(String s) {
-        // ...
-    }
-    public void draw(int i) {
-        // ...
-    }
-    public void draw(double f) {
-        // ...
-    }
-    public void draw(int i, double f) {
-        // ...
-    }
-}
-```
-
-Overloaded methods are differentiated by the number and the type of the arguments passed into the method. In the code sample, `draw(String s)` and `draw(int i)` are distinct and unique methods because they require different argument types.
-
-You cannot declare more than one method with the same name and the same number and type of arguments, because the compiler cannot tell them apart. Additionally, the compiler does not consider return type when differentiating methods, so you cannot declare two methods with the same signature even if they have a different return type.
-
-Let's go back to our `CharacterCard` example. Say we just want to create a new character card with a predefined amount of health and energy. We can do so by creating another constructor.
-
-```java
-public class CharacterCard {
-	String name;
-	String id;
-	int damage;
-	int health;
-	int energy;
-	int maxHealth;
-	int maxEnergy;
-	boolean dead = false;
-
-	public CharacterCard(String name, int damage) {
-		this.name = name;
-		this.damage = damage;
-		
-		this.health = 10;
-		this.maxHealth = 10;
-		this.energy = 0;
-		this.maxEnergy = 3;
-	}
-
-	public CharacterCard(String name, int damage, int maxHealth, int maxEnergy) {
-		this.name = name;
-		this.damage = damage;
-		this.maxHealth = maxHealth;
-		this.maxEnergy = maxEnergy;
-
-		this.health = maxHealth;
-		this.energy = 0;
-	}
-
-	public void takeDamage(int damage) {
-		this.health -= damage;
-
-		if (this.health < 0) return;
-
-		this.health = 0;
-		this.energy = 0;
-		this.dead = true;
-	}
-
-	public void dealDamage(CharacterCard character) {
-		character.takeDamage(this.damage);
-		this.energy += 1;
-	}
-
-	public void heal(int healing) {
-		this.health += healing;
-
-		if (this.health < this.maxHealth) return;
-
-		this.health = this.maxHealth;
-	}
-}
-```
-
-Now, we can create a character card with predefined max health and energy, or create a character card with a custom max health and energy!
-
-::: tip
-Overloaded methods should be used sparingly, as they can make code much less readable.
-:::

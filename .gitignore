@@ -10,3 +10,4 @@ guide/.vuepress/dist
 .DS_Store
 TODO.md
 .gitignore
+guide/2/oop-rewrite.md
