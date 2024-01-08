@@ -4,6 +4,10 @@ If you're reading this, it probably means that you want to learn Java. Well, you
 
 Ok nevermind, this aint no compilation anymore. It's an entire ass explanation 💀 (for OOP, at least). 
 
+## Extra notes
+
+TODO?: add extra notes for CS, explaining tutorial hell, how doing a simple CS project can help you, etc.
+
 ## Credits
 - [discordjs.guide](https://discordjs.guide) - Website "inspiration" *i yoinked basically all the formatting and the conventions*
 - [dev.java/learn/](https://dev.java/learn/) - OOP Concepts and more in-depth explanations.
