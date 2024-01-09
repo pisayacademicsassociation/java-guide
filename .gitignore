@@ -11,4 +11,5 @@ guide/.vuepress/dist
 TODO.md
 .gitignore
 guide/2/oop-rewrite.md
+guide/2/oop-old.md
 Forum Guidelines.md

@@ -2,9 +2,5 @@
 
 ## Pages
 
-### New
-- [Classes, Objects, and Packages](./2/classes-objects-packages): Rewritten content, fixed *most* grammatical errors.
-- [Packages (extended)](./2/packages-extension): Rewritten content, fixed *most* grammatical errors.
-
 ### Updated
-- Reverted change: [Object-Oriented Programming](./2/oop): Moved some sections to [Classes (extended)](./2/classes-extension).
+- [Object-Oriented Programming](./2/oop): Added some more info for the rewrite, started rewrite on [What is Inheritance](./2/oop#what-is-inheritance).

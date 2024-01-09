@@ -4,9 +4,73 @@
 It is heavily recommended to read both the [**Classes, Objects, and Packages**](./classes-objects-packages.md) section and the [**Classes (Extended)**](./classes-extension.md) section since this section will extend your knowledge on both of those topics. 
 :::
 
+You may have heard the term "Object-Oriented Programming" before, but just what does it mean? This is one of the many programming styles that many developers use in creating various programs, ranging from tools to games, but what exactly is Object-Oriented Programming?
+
+## Definition of Terms
+
+Alright, I get it, you don't wanna do Research anymore, but I need to put this here as your quick reference just in case I use some terms that you may not understand.
+
+- **Class** - refers to a standard Java class.
+- **Class instance**, **instance** or **Class object** - refers to an instance/object created from a class, using `new ClassName();`.
+- **Superclass** - refers to the parent class the child class is extending.
+- **Subclass** - refers to a child class of a parent class.
+- **Paradigm** (programming) - is a specific style of programming.
+- **OOP** or **Object-Oriented Programming** - refers to the Object-Oriented Programming Paradigm.
+- **refactor** - refers to changing the inner structure of a specific piece of code without changing it's normal behavior.
+- **fields** - refers to variables tied to a class.
+- **methods** - refers to methods tied to a class.
+
+### Code examples
+
+```java
+class A extends B
+```
+`A` is the **subclass** (the class being extended by B), B is the **superclass** (the class A is being extended from)
+
+```java
+class MyClass
+```
+`MyClass` is a **Class**.
+
+```java
+MyClass instanceOfMyClass = new MyClass();
+```
+`instanceOfMyClass` is a **Class instance** of `MyClass`.
+
+```java
+class Person {
+	String name;
+	int age;
+}
+```
+`name` and `age` are **fields** of the `Person` class.
+
+```java
+class Person {
+	public void speak(String message) {
+		// ...
+	}
+}
+```
+`speak()` is a **method** of the `Person` class.
+
+## What exactly is OOP?
+
+Now that we got the definition of terms out of the way, it's time to give the reason why programming in Java feels so different from programming in other programming languages.
+
+Back in CS1, CS2 and CS3, we have learned and used Python, C++ and JavaScript, respectively. But did you remember that before learning Python, we created a bunch of flowcharts? From CS1 until CS3, we have used the Procedural Programming Paradigm, which is why they feel so similar in terms of programming.
+
+However, a new problem arises with Java. You see, Java is mostly based on the Object-Oriented Programming Paradigm, which is drastically different from the Procedural Programming Paradigm. If you would notice, OOP-related programs would have multiple Java files packed into a folder, or package, while Procedural programs would usually have one file. This is because of the difference in both programming styles, which we will now discuss.
+
+Think of Procedural Programming like an individual project, while think of Object-Oriented Programming as a group project. In an individual project, you have to do all the work to complete your project, just like how in Procedural Programming, where all the code is nested into a single file. In a group project, each member of the group has their own specific task that they have to do, just like how in Object-Oriented Programming, each class has their own specific task delegated to them.
+
+Now, this begs the question, why would you choose Object-Oriented Programming over Procedural Programming? This is because Object-Oriented Programming allows you to delegate specific bundles of code into seperate classes. This allows you to keep your code clean, efficient and easy to refactor.
+
 ## What is Inheritance?
 
-Different kinds of objects frequently share some characteristics with one another. Swords, Bows, and Catalysts, for example, all share the characteristics of weapons (damage, range, attackSpeed). Yet each also defines additional querks that make them different: bows require a projectile; catalysts do a certain type of damage; swords can have a certain sharpness to them.
+Lets say you have some objects that share a common trait. Now, you want to add one more common trait to these objects, which you would have to copy and paste over and over again. However, what would happen if you have a hundred of these objects? It would be very tiring to copy and paste your common trait a hundred times, would it? What if you want to rename one of the common traits? You'd have to make the change for all the other objects as well, which could be very tiring and boring.
+
+Deriving from our previous TCG examples, Swords, Bows, and Catalysts, for example, all share the characteristics of weapons (damage, range, attackSpeed). Yet each also defines additional querks that make them different: bows require a projectile; catalysts do a certain type of damage; swords can have a certain sharpness to them, and etc.
 
 Object-oriented programming allows classes to inherit commonly used states and behaviors from other classes. We can create a `Weapon` superclass for our `Sword`, `Bow`, and `Catalyst` subclasses. In the Java programming language, each class is allowed to have one direct superclass, and each superclass has the potential for an unlimited number of subclasses:
 
@@ -15,8 +79,7 @@ The syntax for creating a subclass is simple. At the beginning of your class dec
 ```java
 class Catalyst extends Weapon {
 
-    // new fields and methods defining 
-    // a catalyst would go here
+    // new fields and methods defining a catalyst would go here
 
 }
 ```
