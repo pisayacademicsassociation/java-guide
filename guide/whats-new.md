@@ -3,4 +3,5 @@
 ## Pages
 
 ### Updated
-- [Object-Oriented Programming](./2/oop): Added some more info for the rewrite, started rewrite on [What is Inheritance](./2/oop#what-is-inheritance).
+- [Object-Oriented Programming](./2/oop): Rewritten some parts about [What is Abstraction](./2/oop#what-is-abstraction) and [What is an Interface](./2/oop#what-is-an-interface).
+- [# Classes, Objects, and Packages](./2/classes-objects-packages.md): Changed some incorrect wordings.

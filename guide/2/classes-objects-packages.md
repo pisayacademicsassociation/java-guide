@@ -5,7 +5,7 @@ An object is a bundle of states and behaviors. In the real world, we can observe
 
 Software objects consist of states and related behaviors. An object stores its state in *fields* (variables in other programming languages) and exposes its behavior through *methods* (functions in some programming languages).
 
-For this guide, we will refer to our imaginary trading card game, with all sorts of cards and characters. A character in this game could have all kinds of states (name, current and maximum health, current and maximum energy, skills) and behaviors (take damage, deal damage, heal), which would be our object, created using a class.
+For this section of the guide, we will refer to our imaginary trading card game, with all sorts of cards and characters. A character in this game could have all kinds of states (name, current and maximum health, current and maximum energy, skills) and behaviors (take damage, deal damage, heal), which would be our object, created using a class.
 
 By attributing states (current health, current energy) and providing methods for changing that state, the object remains in control of how the outside world is allowed to use it. For example, if your character has a max health of 10, a method to heal this character should automatically handle healing overflows and limit the current health to 10.
 

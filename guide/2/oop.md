@@ -19,6 +19,10 @@ Alright, I get it, you don't wanna do Research anymore, but I need to put this h
 - **refactor** - refers to changing the inner structure of a specific piece of code without changing it's normal behavior.
 - **fields** - refers to variables tied to a class.
 - **methods** - refers to methods tied to a class.
+- **instantiate** - refers to the creation of a class instance/object from a class.
+- **instantiable** - refers to a class that allows a class instance/object to be created from it.
+- **implementation** - refers to code for a specific method.
+- **method signature** - refers to the parameter list of a specific method.
 
 ### Code examples
 
@@ -52,7 +56,7 @@ class Person {
 	}
 }
 ```
-`speak()` is a **method** of the `Person` class.
+`speak(String message)` is a **method** of the `Person` class, `(String message)` is a **method signature** of the `speak` method.
 
 ## What exactly is OOP?
 
@@ -275,7 +279,7 @@ public class TestWeaponry {
 The following should be the output from the test program:
 ```txt
 You did 20.0 damage!
-You did 10.0 water damage!
+You did 10.0 Water damage!
 You did 15.0 damage using an Arrow!
 ```
 Now, how did this happen? Wasn't the type `Weapon`? This is because the JVM invokes each variable's corresponding method for the object it refers to, not the variable's type. This behavior, which is known as virtual method invocation, illustrates one of the important polymorphism features that can be found in the Java language.
@@ -487,7 +491,7 @@ Overloaded methods should be used sparingly, as they can make code much less rea
 
 ## What is Abstraction?
 
-An abstract class is a class that is declared `abstract` — it may or may not include abstract methods. Abstract classes cannot be instantiated, but they can be subclassed.
+An abstract class is a class that is declared `abstract` — it may or may not include abstract methods. Abstract classes cannot be instantiated, but they can be subclassed. These classes are mostly used as templates for closely related classes with very similar implementations.
 
 An abstract method is a method that is declared without an implementation (without braces, and followed by a semicolon), like this:
 ```java
@@ -503,7 +507,7 @@ public abstract class LivingEntity {
 	abstract void addVelocity(double x, double y, double z);
 }
 ```
-When an abstract class is subclassed, the subclass should provide implementations for all of the abstract methods in its parent class. If it does not, then the subclass must also be declared `abstract`. Additionally, the usage of the `@Override` annotation is not required when the subclass provides implementations for abstract methods.
+When a subclass extends an abstract class, the subclass should provide implementations for all of the abstract methods in its parent class. If it does not, then the subclass must also be declared `abstract`. Additionally, the usage of the `@Override` annotation is not required when the subclass provides implementations for abstract methods.
 
 
 ## What is an Interface?
@@ -528,9 +532,9 @@ public interface OperateCar {
    // more method signatures
 }
 ```
-Do note that a method **signature** has no braces and is terminated with a semicolon.
+Do note that methods inside interfaces have no braces and are terminated with a semicolon.
 
-To use an interface, you write a class that implements the interface. When an instantiable class implements an interface, it provides a method body for each of the methods declared in the interface. For example,
+To use an interface, you have to write a class that implements the interface. When an instantiable class implements an interface, it provides a method body for each of the methods declared in the interface. For example,
 
 ```java
 public class OperateBugatti implements OperateCar {
@@ -548,12 +552,23 @@ public class OperateBugatti implements OperateCar {
 }
 ```
 
-In the AI-powered car example above, the car manufacturers will be the ones to implement the interface. Chevrolet's implementation will be significantly different from Toyota's, but both manufacturers will still adhere to the same interface. The guidance manufacturers, who are the clients of the interface, will build systems that use GPS data on a car's location, digital street maps, and traffic data to drive the car. In doing so, the guidance systems will invoke the interface methods: `turn()`, `changeLanes()`, `brake()`, `accelerate()`, and so on and so forth.
+In the AI-powered car example above, the car manufacturers will be the ones to implement the interface. Bugatti's implementation will be significantly different from Toyota's, but both manufacturers will still adhere to the same interface. The guidance manufacturers, who are the clients of the interface, will build systems that use GPS data on a car's location, digital street maps, and traffic data to drive the car. In doing so, the guidance systems will invoke the interface methods: `turn()`, `changeLanes()`, `brake()`, `accelerate()`, and so on and so forth.
 
 To create an interface by creating another interface, you can do it like so:
 ```java
 public interface OperateCar extends OperateVehicle {
 	// ...
+}
+```
+
+Additionally, you can implement multiple interfaces like so:
+```java
+public interface InterfaceABC extends InterfaceA, InterfaceB, InterfaceC {
+
+}
+
+public class ClassABC implements InterfaceA, InterfaceB, InterfaceC {
+
 }
 ```
 ::: warning
