@@ -70,3 +70,15 @@ If you would like to check if the user pressed a specific key, then you can do s
 e.getKeyCode() == KeyEvent.VK_ENTER 
 ```
 You can find the list of keys and their corresponding static field [here](https://www.tutorialspoint.com/awt/awt_key_event.htm).
+
+For the `KeyListener` interface, you need to implement three methods.
+```java
+public void keyPressed(KeyEvent e);
+public void keyReleased(KeyEvent e);
+public void keyTyped(KeyEvent e);
+```
+- `keyPressed` is called when a key has been pressed (pressing down on a key)
+- `keyReleased` is called when a key has been released (removing finger from the key)
+- `keyTyped` is called when a key has been typed (input has been recieved)
+
+`keyPressed` and `keyReleased` are called when any key is pressed, but `keyTyped` is called when input is "typed". For example, imagine typing `Shift + A` to type `A`. You'd get two `keyPressed` triggers, then a single `keyTyped`. This is because `keyTyped` is only triggered when text is "typed", so pressing `Shift`, `Escape`, etc. wont trigger the `keyTyped` event, since using these keys normally don't result in them typing out characters.
