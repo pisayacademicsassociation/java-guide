@@ -29,7 +29,7 @@ export default {
 		{
 			text: `Quarter 3`,
 			children: [
-				'/3/events'
+				'/3/gui-events'
 			]
 		},
 		{

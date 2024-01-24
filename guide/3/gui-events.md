@@ -23,6 +23,14 @@ Ok, now that we know what is event handling, and the parts of event handling, we
 
 To create an event handler for a Java GUI, you need to get a new class that extends the listener interface of the event you want, then register it.
 
+```java
+class MyListener implements ListenerInterface {
+	// methods to be implemented
+}
+```
+`ListenerInterface` is the listener interface that corresponds to the event you want to listen for.
+
+
 Refer to this table for a list of the most common event classes and their listener interfaces.
 |   Event/Source  |                                               Description                                              | Listener Interface |
 |-----------------|--------------------------------------------------------------------------------------------------------|--------------------|
@@ -35,6 +43,8 @@ Refer to this table for a list of the most common event classes and their listen
 | WindowEvent     | emitted when the window is opened, closed, activated, deactivated, etc.                                | WindowListener     |
 | FocusEvent      | emitted when a component gains or loses keyboard focus                                                 | FocusListener      |
 
+
+
 ### KeyEvent and KeyListener
 
 When you type something on your keyboard, the **KeyEvent** is emitted. There are three types of key events that you can listen to, which are the following:
@@ -42,7 +52,17 @@ When you type something on your keyboard, the **KeyEvent** is emitted. There are
 - `KEY_RELEASED`
 - `KEY_TYPED`
 
-The class that will handle KeyEvents should implement the `KeyListener` interface. The object/instance of that class must be registered with a component using the `addKeyListener(KeyListener)` method for it to be able to listen for events.
+The class that will handle `KeyEvent`s should implement the `KeyListener` interface. The object/instance of that class must be registered with a component using the `addKeyListener(KeyListener)` method for it to be able to listen for events.
+
+```java
+// ...
+
+textField = new TextField(10);
+// MyKeyListener is the class that is implementing the `KeyListenerInterface`.
+textField.addKeyListener(new MyKeyListener());
+
+// ...
+```
 
 If you would like to check if the user pressed a specific key, then you can do so by using `KeyEvent#getKeyCode()`. However, this returns a number, which corresponds to a specific key. So, how do we find what key they pressed? Well, the `java.awt.event.KeyEvent` class has a list of static fields that represents all the keys from the keyboard as `int`, so you can compare them like so:
 ```java
