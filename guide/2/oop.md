@@ -18,11 +18,13 @@ Alright, I get it, you don't wanna do Research anymore, but I need to put this h
 - **OOP** or **Object-Oriented Programming** - refers to the Object-Oriented Programming Paradigm.
 - **refactor** - refers to changing the inner structure of a specific piece of code without changing it's normal behavior.
 - **fields** - refers to variables tied to a class.
-- **methods** - refers to methods tied to a class.
+- **methods** - refers to functions tied to a class.
 - **instantiate** - refers to the creation of a class instance/object from a class.
 - **instantiable** - refers to a class that allows a class instance/object to be created from it.
 - **implementation** - refers to code for a specific method.
 - **method signature** - refers to the parameter list of a specific method.
+- **calling** (programming) - usually refers to using a specific function or method.
+- **partial** - synonym of incomplete.
 
 ### Code examples
 

@@ -25,6 +25,18 @@ export default {
 				'/2/packages-extension',
 				'/2/oop'
 			]
+		},
+		{
+			text: `Quarter 3`,
+			children: [
+				'/3/events'
+			]
+		},
+		{
+			text: `Additional Information`,
+			children: [
+				'/additional-information/notation'
+			]
 		}
 	]
 };

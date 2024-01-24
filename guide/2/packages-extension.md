@@ -5,7 +5,7 @@ This page is a follow-up and assumes you know the concepts from the [**Classes, 
 :::
 
 ## Understanding packages
-A package is a namespace containing a bundled group of related types (classes, interfaces, etc.), which make types easier to use and find, avoid naming conflicts and control access to certain types.
+A package is a namespace containing a bundled group of related types (classes, interfaces, etc.), which make types easier to use and find, along with avoiding naming conflicts and controlling access to certain types.
 
 We have already seen an example of packages with the Scanner class from our [**Input and Output**](../1/input-output) section. We are using the Scanner class, bundled in the `java.util` package. 
 
@@ -54,7 +54,7 @@ It would help if you bundled these classes and the interface in a package for se
 ## Creating a package
 To create a package, you choose a name for the package (naming conventions are discussed in the [next](#naming-a-package-and-naming-conventions) section) and put a package statement with that name at the top of every source file containing the types you want to include.
 
-The package statement (for example, `package graphics;`) must be the first line in the source file. There can be only one package statement in each source file, and it applies to all types in the file.
+The package statement (for example, `package graphics;`) must be the first line in the Java file. There can be only one package statement in each Java file, and it applies to all types in the file.
 
 If you put the graphics interface and classes listed in the preceding section in a package called `graphics`, you would need six source files containing the classes and interface, like this:
 ```java

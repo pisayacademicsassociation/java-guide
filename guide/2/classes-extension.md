@@ -19,12 +19,11 @@ public void takeDamage(int damage) {
 ```
 A method declaration requires a return type, name, a pair of parentheses `()` and braces `{}`.
 
-More generally, method declarations have six components, in order:
+More specifically, method declarations have five components, in order:
 - Access modifiers — such as `public` and `private`, which is discussed in a later section, over [here](../2/oop.html#access-modifiers).
 - The return type — the data type of the value this method will return, or `void` if none.
 - The method name — the method name, following variable naming rules. 
 - The parameter list in paranthesis — a comma seperated list of method parameters, preceded by their data types, all enclosed by parentheses `()`. If there are no parameters, empty parentheses must be used instead.
-- An exception list — the list of errors this method may return, which would be discussed later (or never, I don't know what's in the rest of Q2, Q3 and Q4).
 - The method body, enclosed between braces — the method's code, including the declaration of local variables, goes inside the braces.
 
 From our example above, we can slice this function into it's corresponding parts:
@@ -35,7 +34,7 @@ From our example above, we can slice this function into it's corresponding parts
 - `{ this.health -= damage; /* (more code here) */ }` — this is the method's body, containing all the code.
 
 ## Defining and using class constructors 
-In our classes, we know that they can have various fields and methods. A class can also have a constructor. In the Java Programming Language, a constructor is also considered a method. However, it is a more *special* type of method, only being called when a new class that contains that constructor is made.
+In our classes, we know that they can have various fields and methods. A class can also have a constructor. In the Java Programming Language, a constructor is also considered a method. However, it is a more *special* type of method, where it is only called when a new class that contains that constructor is made.
 
 Let's go back to our `CharacterCard` class from the [**Classes, Objects and Packages**](../2/classes-objects-packages) section.
 ```java
