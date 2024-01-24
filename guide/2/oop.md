@@ -64,7 +64,7 @@ class Person {
 
 Now that we got the definition of terms out of the way, it's time to give the reason why programming in Java feels so different from programming in other programming languages.
 
-Back in CS1, CS2 and CS3, we have learned and used Python, C++ and JavaScript, respectively. But did you remember that before learning Python, we created a bunch of flowcharts? From CS1 until CS3, we have used the Procedural Programming Paradigm, which is why they feel so similar in terms of programming.
+Back in CS1, CS2 and CS3, we have learned and used Python, C++ and JavaScript, respectively. But did you remember that before learning Python, we created a bunch of flowcharts? From CS1 until CS3, we have used the Procedural Programming Paradigm, which is why they all feel so similar in terms of programming.
 
 However, a new problem arises with Java. You see, Java is mostly based on the Object-Oriented Programming Paradigm, which is drastically different from the Procedural Programming Paradigm. If you would notice, OOP-related programs would have multiple Java files packed into a folder, or package, while Procedural programs would usually have one file. This is because of the difference in both programming styles, which we will now discuss.
 
@@ -384,7 +384,7 @@ We'd end up with an incomplete `Catalyst`. Since we only set the `damageType`, w
 
 You can declare some or all of a class's methods final. You use the `final` keyword in a method declaration to indicate that the method cannot be overridden by subclasses.
 
-You might wish to make a method final if it has an implementation that should not be changed and it is critical to the consistent state of the object. For example, you might want to make the `getFirstPlayer()` method in this `ChessAlgorithm` class final:
+You might wish to make a method final if it has an implementation that should not be changed and is critical to the consistent state of the object. For example, you might want to make the `getFirstPlayer()` method in this `ChessAlgorithm` class final:
 ```java
 class ChessAlgorithm {
     enum ChessPlayer { WHITE, BLACK }
