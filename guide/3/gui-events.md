@@ -57,7 +57,7 @@ The class that will handle `KeyEvent`s should implement the `KeyListener` interf
 ```java
 // ...
 
-textField = new TextField(10);
+TextField textField = new TextField(10);
 // MyKeyListener is the class that is implementing the `KeyListenerInterface`.
 textField.addKeyListener(new MyKeyListener());
 
