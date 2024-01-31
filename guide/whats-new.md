@@ -3,5 +3,4 @@
 ## Pages
 
 ### Updated
-- [Object-Oriented Programming](./2/oop): Rewritten some parts about [What is Abstraction](./2/oop#what-is-abstraction) and [What is an Interface](./2/oop#what-is-an-interface).
-- [# Classes, Objects, and Packages](./2/classes-objects-packages.md): Changed some incorrect wordings.
+- [Handling events in a GUI](./3/gui-events.md): Added [ActionEvent and ActionListener](./3/gui-events.md#actionevent-and-actionlistener) to Handling GUI Events, as well as how to import the events.

@@ -21,7 +21,7 @@ Why would you choose an event-driven programming paradigm? This is because there
 
 Ok, now that we know what is event handling, and the parts of event handling, we can now move on to creating event handlers for specific events.
 
-To create an event handler for a Java GUI, you need to get a new class that extends the listener interface of the event you want, then register it.
+To create an event handler for a Java GUI, you need to create a new class that extends the listener interface of the event you want, then register it. Each ListenerInterface has their own way of registering listeners, which will be discussed in each subsection.
 
 ```java
 class MyListener implements ListenerInterface {
@@ -42,6 +42,8 @@ Refer to this table for a list of the most common event classes and their listen
 | MouseWheelEvent | emitted when the mouse wheel is moved                                                                  | MouseWheelListener |
 | WindowEvent     | emitted when the window is opened, closed, activated, deactivated, etc.                                | WindowListener     |
 | FocusEvent      | emitted when a component gains or loses keyboard focus                                                 | FocusListener      |
+
+Listener interfaces can be imported through the `java.awt.event` package. 
 
 
 
@@ -82,3 +84,16 @@ public void keyTyped(KeyEvent e);
 - `keyTyped` is called when a key has been typed (input has been recieved)
 
 `keyPressed` and `keyReleased` are called when any key is pressed, but `keyTyped` is called when input is "typed". For example, imagine typing `Shift + A` to type `A`. You'd get two `keyPressed` triggers, then a single `keyTyped`. This is because `keyTyped` is only triggered when text is "typed", so pressing `Shift`, `Escape`, etc. wont trigger the `keyTyped` event, since using these keys normally don't result in them typing out characters.
+
+### ActionEvent and ActionListener
+
+When an action is performed on a component, the **ActionEvent** is emitted. There is only one type of action event you can listen to, which is:
+- `ACTION_PERFORMED`
+
+The class that will handle `ActionEvent`s should implement the `ActionListener` interface. The object/instance of that class must be registered with a component using the `addActionListener(ActionListener)` method for it to be able to listen for events.
+
+For the `ActionListener` interface, you need to implement just one method.
+```java
+public void actionPerformed(ActionEvent e);
+```
+- `actionPerfomed` is called when a component-specific action has been performed on the object, for example: a `JButton` getting clicked.
