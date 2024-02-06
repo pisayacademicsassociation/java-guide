@@ -5,7 +5,7 @@ If you're reading this, it probably means that you want to learn Java. Well, you
 ## Credits
 - [dev.java/learn/](https://dev.java/learn/) - OOP Concepts and more in-depth explanations.
 
-Original Creator and Owner: Reodique, RMV
+Original Creator and Owner: Reodique, RMV  
 Editors and contributors:
 - Florendo, RRC
 
