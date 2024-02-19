@@ -124,13 +124,13 @@ If `variable` is equal to `Case1`, then `statement_1`, `statement_2` and `statem
 ```java
 try {
 	statement_1;
-} catch (Error error) {
+} catch (Exception error) {
 	statement_2;
 }
 ```
 
 ### Logic 
-Executes `statement_1`. If `statement_1` throws an `Error`, halts execution of `statement_1` and then executes `statement_2`.
+Executes `statement_1`. If `statement_1` throws an `Exception`, halts execution of `statement_1` and then executes `statement_2`.
 
 ## Try-Catch-Finally
 
@@ -138,7 +138,7 @@ Executes `statement_1`. If `statement_1` throws an `Error`, halts execution of `
 ```java
 try {
 	statement_1;
-} catch (Error error) {
+} catch (Exception error) {
 	statement_2;
 } finally {
 	statement_3;
@@ -146,7 +146,7 @@ try {
 ```
 
 ### Logic 
-Executes `statement_1`. If `statement_1` throws an `Error`, halts execution of `statement_1` and then executes `statement_2`. Once the execution of `statement_1` or `statement_2` finishes, executes `statement_3`.
+Executes `statement_1`. If `statement_1` throws an `Exception`, halts execution of `statement_1` and then executes `statement_2`. Once the execution of `statement_1` or `statement_2` finishes, executes `statement_3`.
 
 ## Ternary operator
 
