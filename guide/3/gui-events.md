@@ -70,8 +70,8 @@ The class that will handle `KeyEvent`s should implement the `KeyListener` interf
 ```java
 // ...
 
-TextField textField = new TextField(10);
-// MyKeyListener is the class that is implementing the `KeyListenerInterface`.
+TextField textField = new JTextField(10);
+// MyKeyListener is the class that is implementing the `KeyListener` interface.
 textField.addKeyListener(new MyKeyListener());
 
 // ...
@@ -103,13 +103,23 @@ When an action is performed on a component, the **ActionEvent** is emitted. Ther
 
 The class that will handle `ActionEvent`s should implement the `ActionListener` interface. The object/instance of that class must be registered with a component using the `addActionListener(ActionListener)` method for it to be able to listen for events.
 
+```java
+// ...
+
+Button myButton = new Button();
+// MyActionListener is the class that is implementing the `ActionListener` interface.
+textField.addActionListener(new MyActionListener());
+
+// ...
+```
+
 For the `ActionListener` interface, you need to implement just one method.
 ```java
 public void actionPerformed(ActionEvent e);
 ```
 - `actionPerfomed` is called when a component-specific action has been performed on the object, for example: a `JButton` getting clicked.
 
-### MouseEvent and MouseAdapter, MouseMotionAdapter
+### MouseEvent and MouseListener, MouseMotionListener
 
 When a mouse action is performed on a component, a **MouseEvent** is emitted. There are seven mouse events you can listen to, which is:
 - `MOUSE_CLICKED`
@@ -120,9 +130,25 @@ When a mouse action is performed on a component, a **MouseEvent** is emitted. Th
 - `MOUSE_DRAGGED`
 - `MOUSE_MOVED`
 
+// MouseEvents are divided into MouseListener, MouseMotionListener, and MouseWheelListener. Perhaps divide into sections instead?
+
+The class that will handle `MouseEvent`s should implement the `MouseListener` or `MouseMotionListener` interface. The object/instance of that class must be registered with a component using the `addMouseListener(MouseListener)` or `addMouseMotionListener(MouseMotionListener)` method, respectively, for it to be able to listen for events.
+
+```java
+// ...
+
+Button myButton = new Button();
+// MyMouseListener is the class that is implementing the `MouseListener` interface.
+myButton.addMouseListener(new MyMouseListener());
+// MyMouseMotionListener is the class that is implementing the `MouseMotionListener` interface.
+myButton.addMouseMotionListener(new MyMouseMotionListener());
+
+// ...
+```
+
 Now, what's unique about `MouseEvent` is that instead of having one listener interface for all these events, you have three, all of which implement different event listeners. Below is a list of which listener interface you should implement each event listener in.
 
-For the `MouseAdapter` interface, you need to implement three methods.
+For the `MouseAdapter` interface, you need to implement five methods.
 ```java
 public void mouseClicked(MouseEvent e);
 public void mouseEntered(MouseEvent e);
@@ -136,7 +162,7 @@ public void mouseReleased(MouseEvent e);
 - `mousePressed` is called when the mouse is pressed while on the component.
 - `mouseReleased` is called when the mouse is released while on the component.
 
-For the `MouseMotionAdapter` interface, you need to implement two method.
+For the `MouseMotionAdapter` interface, you need to implement two methods.
 ```java
 public void mouseDragged(MouseEvent e);
 public void mouseMoved(MouseEvent e);
@@ -149,8 +175,44 @@ public void mouseMoved(MouseEvent e);
 When a mouse wheel is moved while the mouse is on a component, a **MouseWheelEvent** is emitted. There only one mouse wheel event you can listen to, which is:
 - `MOUSE_WHEEL_MOVED`
 
+The class that will handle `MouseWheelEvent`s should implement the `MouseWheelListener` interface. The object/instance of that class must be registered with a component using the `addMouseWheelListener(MouseWheelListener)`method for it to be able to listen for events.
+
+```java
+// ...
+
+Button myButton = new Button();
+// MyMouseWheelListener is the class that is implementing the `MouseWheelListener` interface.
+myButton.addMouseWheelListener(new MyMouseWheelListener());
+
+// ...
+```
+
 For the `MouseWheelListener` interface, you need to implement just one method.
 ```java
 public void mouseWheelMoved(MouseWheelEvent e);
 ```
 - `mouseWheelMoved` is called when the mouse wheel is moved/scrolled while the mouse is on the component.
+
+### ItemEvent and ItemListener
+
+When an item is selected or deselected, an **ItemEvent** is emitted. There are two item events you can listen to, which is:
+- `ITEM_STATE_CHANGED`
+
+The class that will handle `ItemEvent`s should implement the `ItemListener` interface. The object/instance of that class must be registered with a component using the `addItemListener(ItemListener)`method for it to be able to listen for events.
+
+```java
+// ...
+
+Button myButton = new Button();
+// MyItemListener is the class that is implementing the `ItemListener` interface.
+myButton.addItemListener(new MyItemListener());
+
+// ...
+```
+
+For the `ItemListener` interface, you need to implement just one method.
+```java
+public void itemStateChanged(ItemEvent e);
+```
+
+- `itemStateChanged` is called when the state of an item is changed (selected, deselected).
