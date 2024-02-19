@@ -80,24 +80,6 @@ If you have seen the right side of the Form Creator, you can see a "Palette" wit
 
 ### ButtonGroups
 
-This class is used to create a multiple-exclusion scope for a set of buttons. Creating a set of buttons with the same ButtonGroup object means that turning "on" one of those buttons turns off all other buttons in the group.
-
-A ButtonGroup can be used with any set of objects that inherit from AbstractButton. Typically a button group contains instances of JRadioButton, JRadioButtonMenuItem, or JToggleButton. It wouldn't make sense to put an instance of JButton or JMenuItem in a button group because JButton and JMenuItem don't implement the selected state.
-
-Initially, all buttons in the group are unselected.
-
-For examples and further information on using button groups see How to Use Radio Buttons, a section in The Java Tutorial.
-
-Warning: Serialized objects of this class will not be compatible with future Swing releases. The current serialization support is appropriate for short term storage or RMI between applications running the same version of Swing. As of 1.4, support for long term storage of all JavaBeans has been added to the java.beans package. Please see java.beans.XMLEncoder.
-
-Since:
-
-1.2
-Author:
-
-Jeff Dinkins
-oracle def'n
-
 A `ButtonGroup` is a used to create a multiple-exclusion scope for a set of buttons. Basically, creating a set of buttons with the same `ButtonGroup` object means that turning "on" one of these buttons will turn all the other buttons in the group "off".
 
 Normally, a `ButtonGroup` that can be used with any set of objects that inherit from `AbstractButton`. However, for simplicity's sake, we will only be using `ButtonGroup` with `JRadioButton`s.
