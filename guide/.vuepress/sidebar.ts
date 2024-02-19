@@ -23,7 +23,8 @@ export default {
 				'/2/classes-objects-packages',
 				'/2/classes-extension',
 				'/2/packages-extension',
-				'/2/oop'
+				'/2/oop',
+				'/2/gui'
 			]
 		},
 		{
