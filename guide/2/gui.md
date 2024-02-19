@@ -20,19 +20,19 @@ To create a NetBeans project, make sure you have NetBeans installed. If you don'
 
 Once you have NetBeans installed and running, click the "New Project" button on the top-left or use the keyboard shortcut `Ctrl + Shift + N` to create a new NetBeans Project.
 
-<img src="./media/netbeans_proj_step1.png">
+<img src="./media/netbeans_proj_step1.png" class="center x50">
 
 After that, a popup box will appear. Make sure to pick **Java with Ant** as the **Category** and **Java Application** as the **Project**. Then, click **Next**.
 
-<img src="./media/netbeans_proj_step2.png">
+<img src="./media/netbeans_proj_step2.png" class="center x50">
 
 The program will then ask you for the Project Name and some other information. Fill them however you see fit. 
 
-<img src="./media/netbeans_proj_step3.png">
+<img src="./media/netbeans_proj_step3.png" class="center x50">
 
 Congratulations! You have created a new project in NetBeans. You should see this appear on the IDE.
 
-<img src="./media/netbeans_proj_step4.png">
+<img src="./media/netbeans_proj_step4.png" class="center x75">
 
 ### Creating a JFrame using the NetBeans IDE
 
@@ -40,19 +40,19 @@ Now that we have a NetBeans Project set up and ready to go, it is time we create
 
 Navigate to your **Source Packages** and find the main package. For us, that is the `tutorial` package. 
 
-<img src="./media/netbeans_jframe_step1.png">
+<img src="./media/netbeans_jframe_step1.png" class="center x50">
 
 Now, right-click the `tutorial` package. A drop-down menu should appear. Find **New**, then click **JFrame Form**.
 
-<img src="./media/netbeans_jframe_step2.png">
+<img src="./media/netbeans_jframe_step2.png" class="center x50">
 
 The program will ask you to name your new `JFrame`. Name it accordingly, then click **Finish**.
 
-<img src="./media/netbeans_jframe_step3.png">
+<img src="./media/netbeans_jframe_step3.png" class="center x50">
 
 Great! Now you should have your JFrame, ready to be edited.
 
-<img src="./media/netbeans_jframe_step4.png">
+<img src="./media/netbeans_jframe_step4.png" class="center x75">
 
 ## Adding GUI Components
 
@@ -61,6 +61,24 @@ If you have seen the right side of the Form Creator, you can see a "Palette" wit
 UNDER CONSTRUCTION. PLEASE DOUBLE CHECK TO MAKE SURE ALL INFORMATION ON THE PAGE IS VALID
 
 REVISE ACCORDINGLY
-	- every single discussed item
-	- button group
-	- etc. etc.
+ - every single discussed item
+ - button group
+ - etc. etc.
+
+<style>
+	.center {
+		display: block; 
+		margin-left: auto; 
+		margin-right: auto;
+	}
+
+	.x50 {
+		height: 50%;
+		width: 50%
+	} 
+
+	.x75 {
+		height: 75%;
+		width: 75%
+	} 
+</style>
