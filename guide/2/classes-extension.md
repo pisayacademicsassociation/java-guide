@@ -85,3 +85,84 @@ public class CharacterCard {
 Our constructor here is `CharacterCard`. A class constructor must always have the same name as the class. This is what differentiates a constructor from a method.
 
 When we want to create a new `CharacterCard`, we use the `new CharacterCard()` syntax. A constructor's arguments are applied to the syntax. Here, we are using the no-argument constructor, which doesn't really exist in `new CharacterCard()`. When creating a new class, we need to pass in valid arguments to the constructor. Here, we need to pass a `String`, `int`, `int`, `int`, in that order. This is because our constructor has a method signature of `(String, int, int, int)`. Therefore, we need to pass our values in that order.
+
+## Static and Instance: The Difference
+
+In Java, a class can have either **static** or **instance** methods/fields, but what is a "static method" or an "instance method"?
+
+A static method is a method that can be used from the class directly. An example of this is the `main()` method that we always use.
+```java
+public class Main {
+	public static void main(String args[]) {
+		// ...
+	}
+}
+```
+
+A static method is declared using the `static` modifier. The `main()` method is a static method. This means that other classes can invoke/call the `main()` method without having to create a new instance of the `Main` class.
+```java
+Main.main(args);
+```
+
+An instance method is a method that is used from the class instance.
+```java
+public class Student {
+	public void study() {
+		// ...
+	}
+}
+```
+
+By default, any methods that aren't declared `static` are instance methods. The `study()` method is an instance method. This means that you need to create a `new Student()` or have an instance/object of the class `Student` so you can invoke/call the `study()` method.
+```java
+Student student1 = new Student();
+student1.study();
+```
+
+This rule can also apply to fields.
+
+Just like a static method, a static field is a field that can be accessed from the class directly. 
+
+```java
+public class Main {
+	public static String rickroll = "Never gonna give you up.";
+}
+```
+
+Just like static methods, static fields need to have the `static` modifier in order for them to be declared as a static field. The field `rickroll` is a static field, which means you can access it from the `Main` class directly.
+```java
+Main.rickroll;
+```
+
+Just like an instance method, an instance field is a field that is used from the class instance.
+```java
+public class Main {
+	public Scanner input = new Scanner(System.in);
+}
+```
+
+Just like instance methods, fields that aren't declared `static` are instance fields. The field `input` is an instance field. This means that you need to create a `new Main()` or have an instance/object of class `Main` to access the `input` field.
+```java
+Main main = new Main();
+main.input;
+```
+
+## Using the this keyword
+
+In classes, you can use the `this` keyword to refer to the current class instance. However, you should be careful where you use the `this` keyword.
+
+For instance, you cannot use the `this` keyword in static methods. This is because static methods are declared `static`, therefore, there is no class instance for `this` to refer to. Trying to do so gives you a "Cannot use this in a static context" error.
+
+```java
+public class Student {
+	public static void main(String[] args) {
+		this.study(); // java.lang.Error: Unresolved compilation problem: Cannot use this in a static context
+	}
+
+	public void study() {
+		// ...
+	}
+}
+```
+
+This works similarly to using static methods inside instance methods. Some programmers make the mistake of using `this` to refer to their static method in the same class. Always remember that the `this` keyword refers to the current class instance. To call static methods in the same class, just call it like how'd you call it in another class, which is `Class.method()`.

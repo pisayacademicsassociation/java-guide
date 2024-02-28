@@ -2,5 +2,8 @@
 
 ## Pages
 
+### Created
+- [More on Strings and the StringBuilder](./3/string-and-string-builder.md)
+
 ### Updated
-- [Handling events in a GUI](./3/gui-events.md): Added [ActionEvent and ActionListener](./3/gui-events.md#actionevent-and-actionlistener) to Handling GUI Events, as well as how to import the events.
+- [Classes (Extended)](./2/classes-extension.md): Added [Static and Instance: The Difference](./2/classes-extension.md#static-and-instance-the-difference) and [Using the this keyword](./2/classes-extension.md#using-the-this-keyword) to the section.
