@@ -281,6 +281,8 @@ new StringBuilder();
 ```
 This constructor creates a blank `StringBuilder` with a capacity of `16`.
 
+<hr>
+
 ```java
 new StringBuilder(int capacity);
 ```
@@ -292,6 +294,8 @@ StringBuilder myStr = new StringBuilder(42);
 ```
 
 This creates a blank `StringBuilder` with a capacity of `42`.
+
+<hr>
 
 We can also add a `String` directly to the `StringBuilder`!
 
