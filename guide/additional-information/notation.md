@@ -1,6 +1,6 @@
 # Java Guide notation
 
-Throughout this guide, you will find certain notations in certain parts of code, explanations, etc. To help you understand the content within the guide, we will be going over some standard notations used in this guide.
+Throughout this guide, you will find certain notations in certain parts of code, explanations, etc. To help you understand the content within the guide, we will be going over some standard notations used in this guide. Do note that this isn't official Java syntax, and trying to use this as syntax will give you an error.
 
 ## Classes
 
@@ -31,4 +31,4 @@ Here, `input.nextLine()` refers to the method `input.nextLine()` as declared in 
 
 What about `input.next()`? Would that refer to the static method `next()` of the class `input`? The answer is no, since `input` is already "declared" as an instance of `Scanner` in the code snippet above. 
 
-What if we want to refer to the static method `next()` of the class `input` instead, when we have this code snippet here? For special cases like these, the guide will add the `(E)` modifier to the end of the snippet. For example, `input.next() (E)` would refer to the static method `next()` of the class `input` instead, considering the snippet above.
+What if there's a static class called `input` and we want to refer to the static method `next()` of that class instead, when we have this code snippet here? For special cases like these, the guide will add the `(E)` modifier to the end of the snippet. For example, `input.next() (E)` would refer to the static method `next()` of the class `input` instead, considering the snippet above. Another method is to use the full package name, let's say `input` is part of the `com.tests` package, then `com.tests.input.next()` would also refer to the static method `input.next()`. Don't worry though, as there's barely any instances of this happening.

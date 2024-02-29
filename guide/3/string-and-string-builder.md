@@ -185,7 +185,7 @@ System.out.println(strJustSpaces.strip()); // Expected output: ""
 System.out.println(strNoSpaces.strip()); // Expected output: "this has no spaces"
 ```
 
-::: tip "White space" and "Space"
+::: tip "White space" and "Space": What's the difference?
 Did you know that these two are different things? To the outside eye, it looks like there is no difference between the both. However, internally, there is a huge difference between the both of them.
 
 However, for simplicity, a "Space" is `' '`, while "White space" is `' '`, `\t` (tab), `\n` (line feed), `\f` (form feed), `\r` (carriage return)
@@ -228,25 +228,46 @@ Compares this `String` to another `String`, ignoring case. Two strings are consi
 int compareTo(String anotherString);
 ```
 
-[Taken from the Javadoc. TODO: turn this into something more understandable]
-Compares two strings lexicographically. The comparison is based on the Unicode value of each character in the strings. The character sequence represented by this `String` object is compared lexicographically to the character sequence represented by the argument string. The result is a negative integer if this `String` object lexicographically precedes the argument string. The result is a positive integer if this `String` object lexicographically follows the argument string. The result is zero if the strings are equal; `compareTo` returns `0` exactly when the `equals(Object)` method would return `true`.
-
-This is the definition of lexicographic ordering. If two strings are different, then either they have different characters at some index that is a valid index for both strings, or their lengths are different, or both. If they have different characters at one or more index positions, let *k* be the smallest such index; then the string whose character at position *k* has the smaller value, as determined by using the `<` operator, lexicographically precedes the other string. In this case, `compareTo` returns the difference of the two character values at position `k` in the two string -- that is, the value:
-
-```java
-this.charAt(k)-anotherString.charAt(k)
-```
-
-If there is no index position at which they differ, then the shorter string lexicographically precedes the longer string. In this case, compareTo returns the difference of the lengths of the strings -- that is, the value:
-
-```java
-this.length()-anotherString.length()
-```
+Compares two strings lexicographically. If an index in either string has a different character, compares the two characters based on their Unicode value, then returns the value. If two strings have the same characters, but different lengths, the shorter string precedes the longer string. In this case, `compareTo()` returns the difference of the lengths of this string and the other string.
 
 - **Parameters:**
 	- **anotherString** the `String` to be compared.
 - **Returns:**
 	- the value `0` if the argument string is equal to this string; a value less than `0` if this string is lexicographically less than the string argument; and a value greater than `0` if this string is lexicographically greater than the string argument.
+
+**Example:**
+```java
+String str1 = "Never gonna give you up!";
+String str2 = "Never gonna let you down!";
+
+System.out.println(str1.compareTo(str2)); 
+/**
+ * Expected output: -5 
+ * 
+ * "Never gonna " are present in both strings, but a difference happens in index 6: 'g' and 'l'.
+ * 'g' is the 7th letter of the alphabet, while 'l' is the 12th letter of the alphabet
+ * Additionally, 'g' has a numeric unicode value of 16, while 'l' has a unicode value of 21
+ * since we are comparing 'g' to 'l', it would be 16 - 21 = -5.
+ * 
+ * If you want to gain the numeric unicode value of a character, you can use the
+ * `Character.getNumericValue()` method.
+ */
+
+
+
+
+String str1 = "Never gonna give you up!";
+String str2 = "Never gonna give you up! Always!";
+
+System.out.println(str1.compareTo(str2)); 
+/**
+ * Expected output: -8
+ * 
+ * "Never gonna give you up!" is present in both strings, then str1 ends. However, str2 still has
+ * some characters, so it has a different length. Here, compareTo() returns the difference in
+ * lengths, so 24 - 32 = -8
+ */
+```
 
 ## The StringBuilder class
 
