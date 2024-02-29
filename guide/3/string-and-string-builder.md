@@ -252,10 +252,9 @@ System.out.println(str1.compareTo(str2));
  * If you want to gain the numeric unicode value of a character, you can use the
  * `Character.getNumericValue()` method.
  */
+```
 
-
-
-
+```java
 String str1 = "Never gonna give you up!";
 String str2 = "Never gonna give you up! Always!";
 
