@@ -42,25 +42,25 @@ Refer to this table for a list of the most common event classes and their listen
 |   Event/Source  |                                               Description                                              | Listener Interface |
 |-----------------|--------------------------------------------------------------------------------------------------------|--------------------|
 | ActionEvent     | emitted when a button is pressed, a menu item is selected, a list item is double-clicked, etc.         | ActionListener     |
-| MouseEvent      | emitted when the mouse is moved, clicked, pressed, released, when it enters or exits a component, etc. | MouseAdapter or MouseMotionAdapter      |
+| MouseEvent      | emitted when the mouse is moved, clicked, pressed, released, when it enters or exits a component, etc. | MouseListener or MouseMotionListener      |
 | MouseWheelEvent | emitted when the mouse wheel is moved                                                                  | MouseWheelListener |
 | KeyEvent        | emitted when input is recieved from the keyboard.                                                      | KeyListener        |
 | ItemEvent       | emitted when a checkbox or list item is clicked.                                                       | ItemListener       |
 | TextEvent       | emitted when the value of a `JTextArea` or `JTextField` is changed.                                    | TextListener       |
-| WindowEvent     | emitted when the window is opened, closed, activated, deactivated, etc.                                | WindowListener     |
+| WindowEvent     | emitted when the window is opened, closed, activated, deactivated, etc.                                | WindowListener, WindowFocusListener or WindowStateListener     |
 | FocusEvent      | emitted when a component gains or loses keyboard focus                                                 | FocusListener      |
 	
 Listener interfaces can be imported through the `java.awt.event` package. 
 
 ## Creating GUI event handlers (Apache NetBeans)
 
-[explain how to register event handlers using netbeans, images, etc.]
+[TODO: explain how to register event handlers using netbeans, images, etc.]
 
 ## Event and Event Listeners
 
 ### KeyEvent and KeyListener
 
-When you type something on your keyboard, the **KeyEvent** is emitted. There are three types of key events that you can listen to, which are the following:
+When you type something on your keyboard, the **KeyEvent** is emitted. There are three types of key events that you can listen to, which are:
 - `KEY_PRESSED`
 - `KEY_RELEASED`
 - `KEY_TYPED`
@@ -119,9 +119,9 @@ public void actionPerformed(ActionEvent e);
 ```
 - `actionPerfomed` is called when a component-specific action has been performed on the object, for example: a `JButton` getting clicked.
 
-### MouseEvent and MouseListener, MouseMotionListener
+### MouseEvent and MouseListener, MouseMotionListener, MouseAdapter
 
-When a mouse action is performed on a component, a **MouseEvent** is emitted. There are seven mouse events you can listen to, which is:
+When a mouse action is performed on a component, a **MouseEvent** is emitted. There are seven mouse events you can listen to, which are:
 - `MOUSE_CLICKED`
 - `MOUSE_ENTERED`
 - `MOUSE_EXITED`
@@ -129,8 +129,6 @@ When a mouse action is performed on a component, a **MouseEvent** is emitted. Th
 - `MOUSE_RELEASED`
 - `MOUSE_DRAGGED`
 - `MOUSE_MOVED`
-
-// MouseEvents are divided into MouseListener, MouseMotionListener, and MouseWheelListener. Perhaps divide into sections instead?
 
 The class that will handle `MouseEvent`s should implement the `MouseListener` or `MouseMotionListener` interface. The object/instance of that class must be registered with a component using the `addMouseListener(MouseListener)` or `addMouseMotionListener(MouseMotionListener)` method, respectively, for it to be able to listen for events.
 
@@ -146,9 +144,9 @@ myButton.addMouseMotionListener(new MyMouseMotionListener());
 // ...
 ```
 
-Now, what's unique about `MouseEvent` is that instead of having one listener interface for all these events, you have three, all of which implement different event listeners. Below is a list of which listener interface you should implement each event listener in.
+Now, what's unique about `MouseEvent` is that instead of having one listener interface for all these events, you have two, all of which implement different event listeners. Below is a list of which listener interface you should implement each event listener in.
 
-For the `MouseAdapter` interface, you need to implement five methods.
+For the `MouseListener` interface, you need to implement five methods.
 ```java
 public void mouseClicked(MouseEvent e);
 public void mouseEntered(MouseEvent e);
@@ -162,13 +160,15 @@ public void mouseReleased(MouseEvent e);
 - `mousePressed` is called when the mouse is pressed while on the component.
 - `mouseReleased` is called when the mouse is released while on the component.
 
-For the `MouseMotionAdapter` interface, you need to implement two methods.
+For the `MouseMotionListener` interface, you need to implement two methods.
 ```java
 public void mouseDragged(MouseEvent e);
 public void mouseMoved(MouseEvent e);
 ```
 - `mouseDragged` is called when the mouse is dragged while it's on the component. (dragged means the mouse is currently held down and is moving at the same time)
 - `mouseMoved` is called when the mouse moves across the component.
+
+If you don't plan to use all the methods inside a listener interface, or would want to use methods from multiple interfaces, you should consider using the `MouseAdapter` abstract class instead. The `MouseAdapter` provides implementations for all the methods from `MouseListener` and `MouseMotionListener`, and can be used in both the `addMouseListener()` and `addMouseMotionListener()` method. All you have to do is `@Override` the method you want to use.
 
 ### MouseWheelEvent and MouseWheelListener
 
@@ -195,7 +195,7 @@ public void mouseWheelMoved(MouseWheelEvent e);
 
 ### ItemEvent and ItemListener
 
-When an item is selected or deselected, an **ItemEvent** is emitted. There are two item events you can listen to, which is:
+When an item is selected or deselected, an **ItemEvent** is emitted. There is only one item event you can listen to, which is:
 - `ITEM_STATE_CHANGED`
 
 The class that will handle `ItemEvent`s should implement the `ItemListener` interface. The object/instance of that class must be registered with a component using the `addItemListener(ItemListener)`method for it to be able to listen for events.
@@ -216,3 +216,71 @@ public void itemStateChanged(ItemEvent e);
 ```
 
 - `itemStateChanged` is called when the state of an item is changed (selected, deselected).
+
+### WindowEvent and WindowListener, WindowStateListener, WindowFocusListener, WindowAdapter
+
+When the current window is activated, moved, resized, closed, etc., a **WindowEvent** is emitted. There are ten window events you can listen to, which are:
+- `WINDOW_ACTIVATED`
+- `WINDOW_CLOSED`
+- `WINDOW_CLOSING`
+- `WINDOW_DEACTIVATED`
+- `WINDOW_DEICONIFIED`
+- `WINDOW_ICONIFIED`
+- `WINDOW_OPENED`
+- `WINDOW_LOST_FOCUS`
+- `WINDOW_GAINED_FOCUS`
+- `WINDOW_STATE_CHANGED`
+
+The class that will handle `WindowEvent`s should implement the `WindowListener`, `WindowStateListener`, or the `WindowFocusListener` interface. The object/instance of that class must be registered with a component using the `addWindowListener()`, `addWindowStateListener()`, or the `addWindowFocusListener()` method, respectively, for it to be able to listen for events.
+
+```java
+public class MyJFrame extends JFrame {
+	public MyJFrame() {
+		// MyWindowListener is the class that is implementing the `WindowListener` interface.
+		this.addWindowListener(new MyWindowListener());
+		// MyWindowStateListener is the class that is implementing the `WindowStateListener` interface.
+		this.addWindowStateListener(new MyWindowStateListener());
+		// MyWindowFocusListener is the class that is implementing the `WindowFocusListener` interface.
+		this.addWindowFocusListener(new MyWindowFocusListener());
+	}
+
+	// ...
+}
+```
+
+For the `WindowListener` interface, you need to implement seven methods.
+```java
+public void windowOpened(WindowEvent e);
+public void windowClosing(WindowEvent e);
+public void windowClosed(WindowEvent e);
+public void windowIconified(WindowEvent e);
+public void windowDeiconified(WindowEvent e);
+public void windowActivated(WindowEvent e);
+public void windowDeactivated(WindowEvent e);
+```
+
+- `windowOpened` is called when the window is opened.
+- `windowClosing` is called before the window is closed.
+- `windowClosed` is called when the window is closed.
+- `windowIconified` is called when the window is minimized.
+- `windowDeiconified` is called when the window is un-minimized (not maximized).
+- `windowActivated` is called when the window is set to be the active window.
+- `windowDeactivated` is called when the window is no longer the active window.
+
+For the `WindowFocusListener` interface, you need to implement two methods.
+```java
+public void windowLostFocus(WindowEvent e);
+public void windowGainedFocus(WindowEvent e);
+```
+
+- `windowLostFocus` is called when the window loses focus.
+- `windowGainedFocus` is called when the window gains focus.
+
+For the `WindowStateListener` interface, you need to implement just one method.
+```java
+public void windowStateChanged(WindowEvent e)
+```
+
+- `windowLostFocus` is called when the window state is changed.
+
+If you don't plan to use all the methods inside a listener interface, or would want to use methods from multiple interfaces, you should consider using the `WindowAdapter` abstract class instead. The `WindowAdapter` provides implementations for all the methods from `WindowListener`, `WindowStateListener`, and `WindowFocusListener`, and can be used in the `addWindowListener()`, `addWindowStateListener()`, and the `addWindowFocusListener()` method. All you have to do is `@Override` the method you want to use.

@@ -25,6 +25,7 @@ Alright, I get it, you don't wanna do Research anymore, but I need to put this h
 - **method signature** - refers to the parameter list of a specific method.
 - **calling** (programming) - usually refers to using a specific function or method.
 - **partial** - synonym of incomplete.
+- **refactor** - the process of changing a body of code without changing it's external behavior, either to improve it's readability, design, etc.
 
 ### Code examples
 
