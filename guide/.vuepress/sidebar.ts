@@ -30,7 +30,8 @@ export default {
 		{
 			text: `Quarter 3`,
 			children: [
-				'/3/gui-events'
+				'/3/gui-events',
+				'/3/string-and-string-builder'
 			]
 		},
 		{
