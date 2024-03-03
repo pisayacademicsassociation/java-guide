@@ -78,7 +78,7 @@ This returns the length of the string. Basically, it's how much characters are i
 - **Returns:**
 	- the length of the sequence of characters represented by this object.
 
-Example:
+**Example:**
 ```java
 String str = "Never gonna give you up!";
 
@@ -378,7 +378,7 @@ Returns the index within this string of the first occurrence of the specified su
 ```java
 StringBuilder str = new StringBuilder("Never gonna give you up!");
 
-System.out.println(str.indexOf("e")); // Expected output: 1
+System.out.println(str.lastIndexOf("e")); // Expected output: 15
 ```
 
 <hr>
@@ -400,7 +400,19 @@ Returns the zero-based index within this string of the first occurrence of the s
 ```java
 StringBuilder str = new StringBuilder("Never gonna give you up!");
 
-System.out.println(str.indexOf("e", 5)); // Expected output: 15
+System.out.println(str.lastIndexOf("e", 20)); // Expected output: 15
+
+/**
+ * We start at index 20, so our string would be "Never gonna give you ". As you can see, the letter "e" only appears in the
+ * 1st, 3rd and 15th index. Since 15 is the last index, it outputs 15. 
+ */
+
+System.out.println(str.lastIndexOf("e", 14)); // Expected output: 3
+
+/**
+ * We start at index 14, so our string would be "Never gonna giv". As you can see, the letter "e" only appears in the
+ * 1st and 3rd. Since 3 is the last index, it outputs 3. 
+ */
 ```
 
 ### StringBuilder#substring()
@@ -417,6 +429,13 @@ Returns a new String that contains a subsequence of characters currently contain
 - **Returns:**
 	- The new string.
 
+**Example:**
+```java
+StringBuilder str = new StringBuilder("Never gonna give you up!");
+
+System.out.println(str.substring(5)); // Expected output: " gonna give you up!"
+```
+
 <hr>
 
 **Method:**
@@ -432,6 +451,7 @@ Returns a new `String` that contains a subsequence of characters currently conta
 - Returns:
 	- The new string.
 
+**Example:**
 ```java
 StringBuilder str = new StringBuilder("Never gonna give you up!");
 
@@ -458,6 +478,7 @@ The overall effect is exactly as if the argument were converted to a string by t
 `StringBuilder#append()` also provides overloads for every single primitive data type, so you can chuck in your `int`, `double`, `float`, into this string with ease!
 :::
 
+**Example:**
 ```java
 StringBuilder str = new StringBuilder("Never gonna give you up!");
 
@@ -479,6 +500,7 @@ Replaces the characters in a substring of this sequence with characters in the s
 - **Returns:**
 	- This object.
 
+**Example:**
 ```java
 StringBuilder str = new StringBuilder("Never gonna give you up!");
 

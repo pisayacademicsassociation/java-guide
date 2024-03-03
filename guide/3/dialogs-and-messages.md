@@ -40,6 +40,11 @@ This overloaded method shows a input dialog box from the user parented to `paren
 
 While this dialog box is still on the screen, the user cannot interact with the application.
 
+**Example:**
+```java
+String input = JOptionPane.showInputDialog(myJButton, "Please input a number.", "Number input", JOptionPane.QUESTION_MESSAGE);
+```
+
 ## Displaying messages using a dialog box
 
 To take user input using a dialog box, you can use the `JOptionPane.showMessageDialog()` method.
@@ -60,6 +65,11 @@ This overloaded method brings up a dialog that displays a message using a defaul
 	- **message** the `Object` to display.
 	- **title** the title string for the dialog.
 	- **messageType** the type of message that is to be displayed: `JOptionPane.ERROR_MESSAGE`, `JOptionPane.INFORMATION_MESSAGE`, `JOptionPane.WARNING_MESSAGE`, `JOptionPane.QUESTION_MESSAGE`, or `JOptionPane.PLAIN_MESSAGE`.
+
+**Example:**
+```java
+String input = JOptionPane.showMessageDialog(myJButton, "Please input a proper number!", "Wrong input!", JOptionPane.ERROR_MESSAGE);
+```
 
 ## Confirmations using a dialog box
 
