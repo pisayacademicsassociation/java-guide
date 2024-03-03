@@ -4,7 +4,8 @@
 An array is a container that holds a fixed number of values of a single type. The length of an array is established when the array is created, and after creation, its length is fixed. 
 
 <img src="./images/01_array.png" alt="An array with 8 elements." />
-*An array of 8 elements*. Retrieved from Dev.java: https://dev.java/
+
+*An array of 8 elements.* Retrieved from Dev.java: https://dev.java/
 
 Each item in an array is called an element, and each element is accessed by its numerical index. As shown in the preceding illustration, numbering begins with 0. The 6th element, for example, would therefore be accessed at index 5.
 
