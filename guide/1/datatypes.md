@@ -27,6 +27,18 @@ You cannot place underscores:
 - At the beginning or end of a number
 - Adjacent to a decimal point in a floating point literal
 - Before an F or L suffix
+
+```java
+int myInt = 100_000_000; // Correct
+
+double myDouble = 69_.0020; // Incorrect
+
+float myFloat = 1.000_F; // Incorrect
+
+int anotherInt = 100_000_ // Incorrect
+
+double anotherDouble = 69.420_400; // Correct
+```
 :::
 
 ## Reference data types
@@ -34,7 +46,7 @@ You cannot place underscores:
 These data types refer to objects. Common examples include strings, arrays, classes and etc.
 
 Do note that:
-- A reference variable is created using the defined constructor of the class you want to create an instance of. These are used to store and access objects.
+- A reference variable is created using the defined constructor of the class you want to create an instance of. These are used to store and access objects. An exception to this is the `String` class, which can be created using the String literal (`"`).
 - These variables are declared to be of a specific type that cannot be changed.
 - Class objects, and various types of array variables are under reference data types.
 - The default value of any reference variable is null.
@@ -51,9 +63,9 @@ Then, we create a new Square using that class.
 ```java
 Square mySquare = new Square();
 ```
-To access the size of this square, we use the "." to access the `size` property of `mySquare`.
+To access the size of this square, we use the `.` symbol to access the `size` property of `mySquare`.
 ```java
-mySquare.size; // this is 5.
+mySquare.size; // Value: 5.
 ```
 
 ## Type Casting
@@ -62,16 +74,18 @@ This is a Java feature that allows you to turn a value from one data type to ano
 
 There are actually two types of Type Casting, Narrow and Wide.
 
-Wide Type Casting is turning a smaller size type into a larger size type.
+Wide Type Casting is turning a smaller type into a larger type.
 ```java
 int myInt = 9;
-double myDouble = myInt;
+
+double myDouble = myInt; // doesn't need (double) myInt;
 ```
 What's neat about this is that it is done automatically, and that you don't need to add `(double)` prefixed to `myInt` to change it into a `double`!
 
-Narrow Type Casting is turning a larger size type into a smaller size type.
+Narrow Type Casting is turning a larger type into a smaller type.
 ```java
 double myDouble = 69.420;
+
 int myInt = (int) myDouble;
 ```
-Here, you need to prefix `(int)` to properly cast this `double` into an `int`.
+Here, you need to prefix `(int)` to properly cast this `double` into an `int`. If you don't, you get a "Type mismatch: cannot convert from double to int" error.

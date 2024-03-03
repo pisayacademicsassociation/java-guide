@@ -124,4 +124,6 @@ if (choice === JOptionPane.YES_OPTION) {
 
 For easy reference, refer to the image below for the types of `messageType` that you can use *taken from the presentation*.
 
-<img src="./media/message_dialogs.png">
+<img src="./media/message_dialogs.png">]
+
+Retrieved from *JOptionPane Message Dialog Constants.* (2019). In K. Sierra & B. Bates (Eds.), Java™ *How To Program (Early Objects)* (10th ed., p. 552). O'Reilly Media, Inc.: https://www.oreilly.com/

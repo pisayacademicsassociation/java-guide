@@ -161,6 +161,6 @@ This is because of how `input.nextLine()` works. However, since there is no inpu
 
 We can prove this works if you input "15 Philippines" when it asks you for your age. This time, it will still skip the question, however our `country` variable would have the value of `" Philippines"`. This is because the Scanner reads ` Philippines`, then sees the newline, consumes it and ends reading.
 
-Now that you know how this happens, how do you fix it? Some people fix it by putting their `input.nextLine()` methods first before the other methods, while some people use `input.next()` instead, if they are expecting a single-word answer. 
+Now that you know how this happens, how do you fix it? Some people fix it by putting their `input.nextLine()` methods first before the other methods, while some people use `input.next()` instead, if they are expecting a single-word answer. You can also use two `input.nextLine()` methods instead: one to consume the remaining newline, one to consume the input.
 
 The way you fix it is entirely up to you, but now at least you can possibly identify what is wrong when your input suddenly skips over! 
