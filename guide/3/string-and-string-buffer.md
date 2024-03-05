@@ -379,7 +379,7 @@ StringBuffer str = new StringBuffer("Never gonna give you up!");
 System.out.println(str.capacity()); // Expected output: 40
 ```
 
-::: tip
+::: details How is the capacity `40`?
 Recall that a StringBuffer's capacity is specified from the constructor. Here, we have used the `new StringBuffer(String str)` constructor. This set's the capacity of the StringBuffer to `str.length() + 16`. Since the length of `"Never gonna give you up"` is 24, the capacity is `24 + 16`, which is equal to `40`. 
 :::
 

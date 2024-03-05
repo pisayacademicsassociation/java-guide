@@ -32,7 +32,7 @@ export default {
 			children: [
 				'/3/gui-events',
 				'/3/dialogs-and-messages',
-				'/3/string-and-string-builder'
+				'/3/string-and-string-buffer'
 			]
 		},
 		{
