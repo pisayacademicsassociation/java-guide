@@ -82,7 +82,7 @@ This returns the length of the string. Basically, it's how much characters are i
 ```java
 String str = "Never gonna give you up!";
 
-System.out.println(str.length); // Expected output: 24
+System.out.println(str.length()); // Expected output: 24
 ```
 
 ### String#charAt()
@@ -268,6 +268,28 @@ System.out.println(str1.compareTo(str2));
  */
 ```
 
+### String#replace()
+
+**Method**
+```java
+String replace(char oldChar, char newChar);
+```
+
+Returns a version of this string with all occurrences of `oldChar` replaced with `newChar`. If the character `oldChar` is not in the given string, returns the original string instead.
+
+- **Parameters:**
+	- **oldChar** the old character.
+	- **newChar** the new character.
+- **Returns:**
+	- a string derived from this string by replacing every occurrence of `oldChar` with `newChar`.
+
+**Example:**
+```java
+String str = "Never gonna give you up!";
+
+System.out.println(str.replace('e', 'a')); // Expected output: "Navar gonna giva you up!" 
+```
+
 ## The StringBuffer class
 
 You probably heard by now that a `String` is immutable, meaning it's value cannot be changed. However, there might be some instances where you want to change a `String`'s data, but how do you do so?
@@ -314,6 +336,52 @@ This creates a `StringBuffer` with the value of `"Never gonna give you up!"` and
 ## StringBuffer methods
 
 Like the `String` class, the `StringBuffer` class provides multiple methods that allow you to modify, compare, examine, extract and do more with your string. Here are some useful methods that you may use in the future while programming in Java.
+
+### StringBuffer#length()
+
+**Method:**
+```java
+int length();
+```
+
+Returns the length of this character sequence. Basically, it's how much characters are in the `StringBuffer`.
+
+- **Returns:**
+	- the number of `char`s in this sequence
+
+**Example:**
+```java
+StringBuffer str = new StringBuffer("Never gonna give you up!");
+
+System.out.println(str.length()); // Expected output: 24
+```
+
+### StringBuffer#capacity()
+
+**Method:**
+```java
+int capacity();
+```
+
+Returns the current capacity. The capacity is the number of characters that can be stored (including already written characters), beyond which an allocation will occur.
+
+::: tip
+Technically, a `StringBuffer` doesn't have a fixed capacity! When your `StringBuffer` reaches maximum capacity, Java will automatically allocate more memory to your `StringBuffer` to support the appended items!
+:::
+
+- **Returns:**
+	- the current capacity.
+
+**Example:**
+```java
+StringBuffer str = new StringBuffer("Never gonna give you up!");
+
+System.out.println(str.capacity()); // Expected output: 40
+```
+
+::: tip
+Recall that a StringBuffer's capacity is specified from the constructor. Here, we have used the `new StringBuffer(String str)` constructor. This set's the capacity of the StringBuffer to `str.length() + 16`. Since the length of `"Never gonna give you up"` is 24, the capacity is `24 + 16`, which is equal to `40`. 
+:::
 
 ### StringBuffer#indexOf()
 
@@ -458,6 +526,41 @@ StringBuffer str = new StringBuffer("Never gonna give you up!");
 System.out.println(str.substring(0, 5)); // Expected output: "Never"
 ```
 
+### StringBuffer#insert()
+
+**Method:**
+```java
+StringBuffer insert(int offset, Object obj);
+```
+
+Inserts the string representation of the `Object` argument into this character sequence at the indicated offset.
+
+The `offset` argument must be greater than or equal to `0`, and less than or equal to the length of this sequence.
+
+- **Parameters:**
+	- **offset** the offset.
+	- **obj** an `Object`.
+- **Returns:**
+	- This object.
+
+::: tip
+`StringBuffer#insert()` also provides overloads for every single primitive data type, so you can chuck in your `int`, `double`, `float`, into this string with ease!
+:::
+
+**Example:**
+```java
+StringBuffer str = new StringBuffer("Never gonna give you up!");
+
+System.out.println(str.insert(0, "Gonna make you understand! ")); // Expected output: "Gonna make you understand! Never gonna give you up!"
+```
+
+**Example:**
+```java
+StringBuffer str = new StringBuffer("Never gonna give you up!");
+
+System.out.println(str.insert(23, " or down")); // Expected output: "Never gonna give you up or down!"
+```
+
 ### StringBuffer#append()
 
 **Method:**
@@ -505,6 +608,32 @@ Replaces the characters in a substring of this sequence with characters in the s
 StringBuffer str = new StringBuffer("Never gonna give you up!");
 
 System.out.println(str.replace(0, 5, "Always")); // Expected output: "Always gonna give you up!"
+
+/**
+ * The characters from index 0 to 5 are: "Never ", but since 5 is exclusive, the result would be "Never".
+ * Now, we replace "Never", with "Always", and since the string can be lengthened to accomodate the specified
+ * String, it would be "Always gonna give you up!"
+ */
+```
+
+### StringBuffer#reverse()
+
+```java
+StringBuffer reverse();
+```
+
+Reverses the current character sequence. This mutates the current `StringBuilder` instead of returning a new `StringBuilder` with the reversed characters.
+
+- **Returns:**
+	- This object.
+
+**Example:**
+```java
+StringBuffer str = new StringBuffer("Never gonna give you up!");
+
+System.out.println(str.reverse()) // Expected output: "!pu uoy evig annog reveN"
+
+System.out.println(str); // Expected output: "!pu uoy evig annog reveN" (the original string is reversed.)
 
 /**
  * The characters from index 0 to 5 are: "Never ", but since 5 is exclusive, the result would be "Never".
