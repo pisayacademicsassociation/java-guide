@@ -221,6 +221,32 @@ Compares this `String` to another `String`, ignoring case. Two strings are consi
 - **Returns:**
 	- **true** if the argument is not `null` and it represents an equivalent `String` ignoring case; `false` otherwise.
 
+### String#contentEquals()
+
+**Method**
+```java
+boolean contentEquals(CharSequence anotherString);
+```
+
+::: tip
+A `CharSequence` is an interface, which the `String` and `StringBuffer` class implement, so you can use them in `String#contentEquals()`!
+:::
+
+Compares this string to the specified `CharSequence`. The result is true if and only if this `String` represents the same sequence of char values as the specified sequence.
+
+- **Parameters:**
+	- **cs** The sequence to compare this `String` against
+- **Returns:**
+	- `true` if this `String` represents the same sequence of char values as the specified sequence, `false` otherwise
+
+**Example:**
+```java
+String str = "Never gonna give you up!";
+StringBuffer otherStr = new StringBuffer("Never gonna give you up!");
+
+System.out.println(str.contentEquals(otherStr)); // Expected output: true
+```
+
 ### String#compareTo()
 
 **Method**
@@ -289,6 +315,36 @@ String str = "Never gonna give you up!";
 
 System.out.println(str.replace('e', 'a')); // Expected output: "Navar gonna giva you up!" 
 ```
+
+<br>
+
+**Method**
+```java
+String replace(CharSequence target, CharSequence replacement);
+```
+
+::: tip
+A `CharSequence` is an interface, which the `String` and `StringBuffer` class implement, so you can use them in `String#replace()`!
+:::
+
+Replaces each substring of this string that matches the literal target sequence with the specified literal replacement sequence.
+
+- **Parameters:**
+	- **target** The sequence of char values to be replaced
+	- **replacement** The replacement sequence of char values
+- **Returns:**
+	- The resulting string
+
+**Example:**
+```java
+String str = "Never gonna give you up!";
+
+System.out.println(str.replace("Never", "Always")); // Expected output: "Always gonna give you up!"
+```
+
+
+
+
 
 ## The StringBuffer class
 
@@ -590,6 +646,7 @@ System.out.println(str.append(" Never gonna let you down!")); // Expected output
 
 ### StringBuffer#replace()
 
+**Method:**
 ```java
 StringBuffer replace(int start, int end, String str);
 ```
@@ -618,6 +675,7 @@ System.out.println(str.replace(0, 5, "Always")); // Expected output: "Always gon
 
 ### StringBuffer#reverse()
 
+**Method:**
 ```java
 StringBuffer reverse();
 ```
@@ -631,7 +689,7 @@ Reverses the current character sequence. This mutates the current `StringBuilder
 ```java
 StringBuffer str = new StringBuffer("Never gonna give you up!");
 
-System.out.println(str.reverse()) // Expected output: "!pu uoy evig annog reveN"
+System.out.println(str.reverse()); // Expected output: "!pu uoy evig annog reveN"
 
 System.out.println(str); // Expected output: "!pu uoy evig annog reveN" (the original string is reversed.)
 
@@ -640,4 +698,25 @@ System.out.println(str); // Expected output: "!pu uoy evig annog reveN" (the ori
  * Now, we replace "Never", with "Always", and since the string can be lengthened to accomodate the specified
  * String, it would be "Always gonna give you up!"
  */
+```
+
+### StringBuffer#deleteCharAt()
+
+**Method:**
+```java
+StringBuffer deleteCharAt(int index);
+```
+
+Removes the `char` at the specified position in this sequence and returns this `StringBuffer`. This sequence is shortened by one `char`.
+
+- **Parameters:**
+	- **index** Index of char to remove
+- **Returns:**
+	- This object.
+
+**Example:**
+```java
+StringBuffer str = new StringBuffer("Never gonna give you up!");
+
+System.out.println(str.deleteCharAt(6)); // Expected output: "Never onna give you up!"
 ```
