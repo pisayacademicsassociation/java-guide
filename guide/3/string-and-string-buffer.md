@@ -1,4 +1,4 @@
-# More on Strings and the StringBuilder
+# More on Strings and the StringBuffer
 
 If you haven't noticed by now, datatypes like `int`, `char`, `long`, `etc`., have their first letter in lowercase, but the first letter in the word `String` is capitalized, and is written as `String` instead of `string`. Why is there a discrepancy between them? Aren't they the same datatype type?
 
@@ -61,7 +61,7 @@ Of course, `copyString` would have the same value as `myString`, which is `"this
 The `String` class provides multiple methods that allow you to compare, examine, extract and do more with your string. Here are some useful methods that you may use in the future while programming in Java.
 
 ::: tip
-The headers for this section and [StringBuilder methods](#stringbuilder-methods) follow our [guide notation](../additional-information/notation.md)! If you don't wanna read that, then take note of the notation below.
+The headers for this section and [StringBuffer methods](#StringBuffer-methods) follow our [guide notation](../additional-information/notation.md)! If you don't wanna read that, then take note of the notation below.
 
 `Class1#method1()` means that the method `method1()` of the class `Class1` is an **instance method**. Therefore, you must create a `new Class1()` or have an instance/object of `Class1` to be able to use `method1()` on the created instance/object.
 :::
@@ -268,54 +268,54 @@ System.out.println(str1.compareTo(str2));
  */
 ```
 
-## The StringBuilder class
+## The StringBuffer class
 
 You probably heard by now that a `String` is immutable, meaning it's value cannot be changed. However, there might be some instances where you want to change a `String`'s data, but how do you do so?
 
-This is where the `StringBuilder` class comes in. A `StringBuilder` allows you to mutate the original string.
+This is where the `StringBuffer` class comes in. A `StringBuffer` allows you to mutate the original string.
 
-The `StringBuilder` has multiple overloaded constructors, each with it's own purpose, but we will only go over three. 
+The `StringBuffer` has multiple overloaded constructors, each with it's own purpose, but we will only go over three. 
 
 ```java
-new StringBuilder();
+new StringBuffer();
 ```
-This constructor creates a blank `StringBuilder` with a capacity of `16`.
+This constructor creates a blank `StringBuffer` with a capacity of `16`.
 
 <hr>
 
 ```java
-new StringBuilder(int capacity);
+new StringBuffer(int capacity);
 ```
 
-This constructor creates a blank `StringBuilder` with a capacity of `capacity`.
+This constructor creates a blank `StringBuffer` with a capacity of `capacity`.
 
 ```java
-StringBuilder myStr = new StringBuilder(42);
+StringBuffer myStr = new StringBuffer(42);
 ```
 
-This creates a blank `StringBuilder` with a capacity of `42`.
+This creates a blank `StringBuffer` with a capacity of `42`.
 
 <hr>
 
-We can also add a `String` directly to the `StringBuilder`!
+We can also add a `String` directly to the `StringBuffer`!
 
 ```java
-new StringBuilder(String str);
+new StringBuffer(String str);
 ```
 
-This constructor creates a `StringBuilder` with the value `str` and a capacity of `str.length() + 16`.
+This constructor creates a `StringBuffer` with the value `str` and a capacity of `str.length() + 16`.
 
 ```java
-StringBuilder lyrics = new StringBuilder("Never gonna give you up!");
+StringBuffer lyrics = new StringBuffer("Never gonna give you up!");
 ```
 
-This creates a `StringBuilder` with the value of `"Never gonna give you up!"` and a capacity of `40 (24 + 16)`.
+This creates a `StringBuffer` with the value of `"Never gonna give you up!"` and a capacity of `40 (24 + 16)`.
 
-## StringBuilder methods
+## StringBuffer methods
 
-Like the `String` class, the `StringBuilder` class provides multiple methods that allow you to modify, compare, examine, extract and do more with your string. Here are some useful methods that you may use in the future while programming in Java.
+Like the `String` class, the `StringBuffer` class provides multiple methods that allow you to modify, compare, examine, extract and do more with your string. Here are some useful methods that you may use in the future while programming in Java.
 
-### StringBuilder#indexOf()
+### StringBuffer#indexOf()
 
 **Method:**
 ```java
@@ -331,7 +331,7 @@ Returns the index within this string of the first occurrence of the specified su
 
 **Example:**
 ```java
-StringBuilder str = new StringBuilder("Never gonna give you up!");
+StringBuffer str = new StringBuffer("Never gonna give you up!");
 
 System.out.println(str.indexOf("e")); // Expected output: 1
 ```
@@ -353,12 +353,12 @@ Returns the zero-based index within this string of the first occurrence of the s
 
 **Example:**
 ```java
-StringBuilder str = new StringBuilder("Never gonna give you up!");
+StringBuffer str = new StringBuffer("Never gonna give you up!");
 
 System.out.println(str.indexOf("e", 5)); // Expected output: 15
 ```
 
-### StringBuilder#lastIndexOf()
+### StringBuffer#lastIndexOf()
 
 **Method:**
 ```java
@@ -376,7 +376,7 @@ Returns the index within this string of the first occurrence of the specified su
 
 **Example:**
 ```java
-StringBuilder str = new StringBuilder("Never gonna give you up!");
+StringBuffer str = new StringBuffer("Never gonna give you up!");
 
 System.out.println(str.lastIndexOf("e")); // Expected output: 15
 ```
@@ -398,7 +398,7 @@ Returns the zero-based index within this string of the first occurrence of the s
 
 **Example:**
 ```java
-StringBuilder str = new StringBuilder("Never gonna give you up!");
+StringBuffer str = new StringBuffer("Never gonna give you up!");
 
 System.out.println(str.lastIndexOf("e", 20)); // Expected output: 15
 
@@ -415,7 +415,7 @@ System.out.println(str.lastIndexOf("e", 14)); // Expected output: 3
  */
 ```
 
-### StringBuilder#substring()
+### StringBuffer#substring()
 
 **Method:**
 ```java
@@ -431,7 +431,7 @@ Returns a new String that contains a subsequence of characters currently contain
 
 **Example:**
 ```java
-StringBuilder str = new StringBuilder("Never gonna give you up!");
+StringBuffer str = new StringBuffer("Never gonna give you up!");
 
 System.out.println(str.substring(5)); // Expected output: " gonna give you up!"
 ```
@@ -453,16 +453,16 @@ Returns a new `String` that contains a subsequence of characters currently conta
 
 **Example:**
 ```java
-StringBuilder str = new StringBuilder("Never gonna give you up!");
+StringBuffer str = new StringBuffer("Never gonna give you up!");
 
 System.out.println(str.substring(0, 5)); // Expected output: "Never"
 ```
 
-### StringBuilder#append()
+### StringBuffer#append()
 
 **Method:**
 ```java
-StringBuilder append(Object obj);
+StringBuffer append(Object obj);
 ```
 
 Appends the string representation of the `Object` argument.
@@ -475,20 +475,20 @@ The overall effect is exactly as if the argument were converted to a string by t
 	- This object.
 
 ::: tip
-`StringBuilder#append()` also provides overloads for every single primitive data type, so you can chuck in your `int`, `double`, `float`, into this string with ease!
+`StringBuffer#append()` also provides overloads for every single primitive data type, so you can chuck in your `int`, `double`, `float`, into this string with ease!
 :::
 
 **Example:**
 ```java
-StringBuilder str = new StringBuilder("Never gonna give you up!");
+StringBuffer str = new StringBuffer("Never gonna give you up!");
 
 System.out.println(str.append(" Never gonna let you down!")); // Expected output: "Never gonna give you up! Never gonna let you down!"
 ```
 
-### StringBuilder#replace()
+### StringBuffer#replace()
 
 ```java
-StringBuilder replace(int start, int end, String str);
+StringBuffer replace(int start, int end, String str);
 ```
 
 Replaces the characters in a substring of this sequence with characters in the specified String. The substring begins at the specified `start` and extends to the character at index `end - 1` or to the end of the sequence if no such character exists. First the characters in the substring are removed and then the specified `String` is inserted at `start`. (This sequence will be lengthened to accommodate the specified String if necessary.)
@@ -502,7 +502,13 @@ Replaces the characters in a substring of this sequence with characters in the s
 
 **Example:**
 ```java
-StringBuilder str = new StringBuilder("Never gonna give you up!");
+StringBuffer str = new StringBuffer("Never gonna give you up!");
 
 System.out.println(str.replace(0, 5, "Always")); // Expected output: "Always gonna give you up!"
+
+/**
+ * The characters from index 0 to 5 are: "Never ", but since 5 is exclusive, the result would be "Never".
+ * Now, we replace "Never", with "Always", and since the string can be lengthened to accomodate the specified
+ * String, it would be "Always gonna give you up!"
+ */
 ```

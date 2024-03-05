@@ -3,7 +3,7 @@
 ## Pages
 
 ### Created
-- [More on Strings and the StringBuilder](./3/string-and-string-builder.md)
+- [More on Strings and the StringBuffer](./3/string-and-string-builder.md)
 - [Dialogs and Messages](./3/dialogs-and-messages.md)
 
 ### Updated
