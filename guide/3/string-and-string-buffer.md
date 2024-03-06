@@ -275,7 +275,7 @@ System.out.println(str1.compareTo(str2));
  * Additionally, 'g' has a numeric unicode value of 16, while 'l' has a unicode value of 21
  * since we are comparing 'g' to 'l', it would be 16 - 21 = -5.
  * 
- * If you want to gain the numeric unicode value of a character, you can use the
+ * If you want to get the numeric unicode value of a character, you can use the
  * `Character.getNumericValue()` method.
  */
 ```
@@ -316,7 +316,7 @@ String str = "Never gonna give you up!";
 System.out.println(str.replace('e', 'a')); // Expected output: "Navar gonna giva you up!" 
 ```
 
-<br>
+<hr>
 
 **Method**
 ```java
