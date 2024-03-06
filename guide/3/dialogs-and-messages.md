@@ -81,7 +81,7 @@ public static void showConfirmDialog(Component parentComponent, Object message);
 Just like `showInputDialog()`, you can center the confirm dialog relative to a component by providing a `parentComponent`.
 
 ```java
-public static void showMessageDialog(Component parentComponent, Object message, String title, int optionType);
+public static void showConfirmDialog(Component parentComponent, Object message, String title, int optionType);
 ```
 
 This overloaded method brings up a dialog where the number of choices is determined by the `optionType` parameter.
