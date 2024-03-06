@@ -61,7 +61,7 @@ Of course, `copyString` would have the same value as `myString`, which is `"this
 The `String` class provides multiple methods that allow you to compare, examine, extract and do more with your string. Here are some useful methods that you may use in the future while programming in Java.
 
 ::: tip
-The headers for this section and [StringBuffer methods](#StringBuffer-methods) follow our [guide notation](../additional-information/notation.md)! If you don't wanna read that, then take note of the notation below.
+The headers for this section and [StringBuffer methods](#stringbuffer-methods) follow our [guide notation](../additional-information/notation.md)! If you don't wanna read that, then take note of the notation below.
 
 `Class1#method1()` means that the method `method1()` of the class `Class1` is an **instance method**. Therefore, you must create a `new Class1()` or have an instance/object of `Class1` to be able to use `method1()` on the created instance/object.
 :::
