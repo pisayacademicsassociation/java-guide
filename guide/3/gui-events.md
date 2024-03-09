@@ -54,7 +54,29 @@ Listener interfaces can be imported through the `java.awt.event` package.
 
 ## Creating GUI event handlers (Apache NetBeans)
 
-[TODO: explain how to register event handlers using netbeans, images, etc.]
+If you are using the NetBeans IDE, creating an event handler is as easy as pie!
+
+First, select the component you want to create an event handler for. 
+
+<img src="./media/netbeans_evt_handler_step1.png" class="center x50">
+
+For us, this is a `JButton` with the variable name `myButton`.
+
+Now, navigate to the "Events" tab.
+
+<img src="./media/netbeans_evt_handler_step2.png" class="center x50">
+
+You should see a bunch of event listeners listed out for you.
+
+<img src="./media/netbeans_evt_handler_step3.png" class="center x50">
+
+If you want to add an event listener, you can click the `<none>` beside the event you want to add a listener.
+
+<img src="./media/netbeans_evt_handler_step4.png" class="center x50">
+
+Clicking the function will automatically generate an event listener for you. NetBeans will also automatically navigate you to that generated listener.
+
+<img src="./media/netbeans_evt_handler_step5.png" class="center x50">
 
 ## Event and Event Listeners
 
@@ -284,3 +306,23 @@ public void windowStateChanged(WindowEvent e)
 - `windowLostFocus` is called when the window state is changed.
 
 If you don't plan to use all the methods inside a listener interface, or would want to use methods from multiple interfaces, you should consider using the `WindowAdapter` abstract class instead. The `WindowAdapter` provides implementations for all the methods from `WindowListener`, `WindowStateListener`, and `WindowFocusListener`, and can be used in the `addWindowListener()`, `addWindowStateListener()`, and the `addWindowFocusListener()` method. All you have to do is `@Override` the method you want to use.
+
+
+
+<style>
+	.center {
+		display: block; 
+		margin-left: auto; 
+		margin-right: auto;
+	}
+
+	.x50 {
+		height: 50%;
+		width: 50%
+	} 
+
+	.x75 {
+		height: 75%;
+		width: 75%
+	} 
+</style>

@@ -32,10 +32,10 @@ Additionally, you can also place the brackets after the array's name:
 ```java
 Type name[];
 ```
-However, standard convention discourages using this format, since the brackets identify the array type and should usually appear in the type designation.
+However, standard convention discourages using this format, since the brackets identify the array type and should usually appear in the type declaration.
 
 ## Creating, Initializing, and Accessing an Array
-One way to create an array is with the `new` operator. The code below allocates an array with enough memory for 10 integer elements and assigns the array to the anArray variable.
+One way to create an array is with the `new` operator. The code below creates an array with a maximum of 5 integer elements and assigns the array to the anArray variable.
 ```java
 int[] anArray = new int[5];
 ```
@@ -91,7 +91,7 @@ You can use both loops, and they will give the same output, unless you are chang
 This is basically an Array, inside another Array. You can create a two-dimensional array like so:
 ```java
 int[][] array2d = {
-	{ 6, 9 },
+	{ 6, 9, 0 },
 	{ 4, 2, 0 }
 }
 ```
@@ -131,7 +131,11 @@ array2d[1] = new int[9];
 
 To access this type of array, it's the same as how'd you access an array normally, with an extra column.
 
-For example, access the 9th column in the 6th row.
+For example, access the 10th column in the 7th row.
 ```java
 array2d[6][9];
 ```
+
+::: tip
+Arrays are **zero-indexed**, which means that their starting number is `0`. Therefore, the 10th column would be on index `9`.
+:::
