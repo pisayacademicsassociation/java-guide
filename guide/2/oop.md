@@ -464,7 +464,7 @@ public class CharacterCard {
 	public void takeDamage(int damage) {
 		this.health -= damage;
 
-		if (this.health < 0) return;
+		if (this.health > 0) return;
 
 		this.health = 0;
 		this.energy = 0;

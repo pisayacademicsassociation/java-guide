@@ -10,7 +10,7 @@ Our classes can have various methods that a programmer may use to interact with 
 public void takeDamage(int damage) {
 	this.health -= damage;
 
-	if (this.health < 0) return;
+	if (this.health > 0) return;
 
 	this.health = 0;
 	this.energy = 0;
@@ -61,7 +61,7 @@ public class CharacterCard {
 	public void takeDamage(int damage) {
 		this.health -= damage;
 
-		if (this.health < 0) return;
+		if (this.health > 0) return;
 
 		this.health = 0;
 		this.energy = 0;
