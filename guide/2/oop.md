@@ -54,12 +54,16 @@ class Person {
 
 ```java
 class Person {
+	public void speak(String message, Person speakTo) {
+		// ...
+	}
+
 	public void speak(String message) {
 		// ...
 	}
 }
 ```
-`speak` is a **method** of the `Person` class, `speak(String message)` is a **method signature** of the `speak` method.
+`speak` is a **method** of the `Person` class, `speak(String message)` and `speak(String message, Person speakTo)` are **method signatures** of the `speak` method.
 
 ## What exactly is OOP?
 
