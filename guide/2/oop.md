@@ -59,7 +59,7 @@ class Person {
 	}
 }
 ```
-`speak(String message)` is a **method** of the `Person` class, `(String message)` is a **method signature** of the `speak` method.
+`speak` is a **method** of the `Person` class, `(String message)` is a **method signature** of the `speak` method.
 
 ## What exactly is OOP?
 
