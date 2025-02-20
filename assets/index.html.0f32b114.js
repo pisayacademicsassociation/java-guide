@@ -1,0 +1,1 @@
+const e={key:"v-8daa1a0e",path:"/",title:"Introduction",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"Credits",slug:"credits",children:[]},{level:2,title:"Why did I originally do this?",slug:"why-did-i-originally-do-this",children:[]}],filePathRelative:"README.md",git:{updatedTime:1740065368e3}};export{e as data};
